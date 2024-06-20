@@ -1,0 +1,8 @@
+prefix=/home/fhtw_user/catkin_ws/src/fhtw/ROD/devel
+
+Name: project_model
+Description: Description of project_model
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
