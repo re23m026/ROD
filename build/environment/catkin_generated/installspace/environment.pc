@@ -1,4 +1,4 @@
-prefix=/home/fhtw_user/catkin_ws/src/fhtw/ROD/install
+prefix=/home/chp/ROD/install
 
 Name: environment
 Description: Description of environment
