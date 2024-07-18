@@ -1,6 +1,7 @@
 <launch>
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch" />
+    <arg name="paused" value="true"/>
   <node
     name="tf_footprint_base"
     pkg="tf"
@@ -16,7 +17,7 @@
     name="spawn_model_2"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find project_model)/urdf/Urdf.urdf -urdf -model project_model"
+    args="-file $(find project_model)/urdf/RobShift.urdf -urdf -model project_model"
     output="screen" />
   <node
     name="spawn_environment"
