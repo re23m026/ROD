@@ -5,8 +5,7 @@
 <robot
   name="project_model">
 
-  <link name="world"/>
-  
+  <link name="world"/>  
   <joint name="base_to_world" type="fixed">
     <parent link="world"/>
     <child link="base_link"/>

@@ -4,7 +4,7 @@
   <description>
     <p>URDF Description package for Robot 2</p>
     <p>This package contains configuration data, 3D models and launch files
-for Assem1 robot</p>
+for rob_assemble robot</p>
   </description>
   <author>TODO</author>
   <maintainer email="TODO@email.com" />

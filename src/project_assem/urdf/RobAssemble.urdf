@@ -2,258 +2,202 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter!
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="Assem1">
-  <link
-    name="base_link">
-    <inertial>
-      <origin
-        xyz="-2.191247171692195 2.212576728709783 0.26499652930591"
-        rpy="0 0 0" />
-      <mass
-        value="3.5712219261824" />
-      <inertia
-        ixx="4.5178710929184937"
-        ixy="-4.60984107611678E-18"
-        ixz="-1.06639603029745E-18"
-        iyy="0.0178710929184937"
-        iyz="2.28822482640679E-19"
-        izz="0.0197534933840129" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_assem/meshes/base_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_assem/meshes/base_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <link
-    name="Glied 1">
-    <inertial>
-      <origin
-        xyz="-4.50175358715499E-06 -0.00218775862016007 0.128411981670438"
-        rpy="0 0 0" />
-      <mass
-        value="8.06345148807656" />
-      <inertia
-        ixx="0.0529083613806504"
-        ixy="7.86227214579632E-07"
-        ixz="-2.75094940755798E-06"
-        iyy="0.0808871662644074"
-        iyz="0.000606168118549723"
-        izz="0.056246854030176" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_assem/meshes/Glied 1.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://project_assem/meshes/Glied 1.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="joint 1"
-    type="continuous">
-    <origin
-      xyz="-0.019125 -0.35586 0.21258"
-      rpy="1.5708 1.0635 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Glied 1" />
-    <axis
-      xyz="0 0 1" />
+<robot name="rob_assemble">
+
+  <link name="world"/>  
+  <joint name="base_to_world" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="7 7 -0.19" rpy="-1.5708 0 0"/>
   </joint>
-  <link
-    name="Glied2">
+
+  <link name="base_link">
     <inertial>
-      <origin
-        xyz="0.269220945811578 0.110266011971796 -7.77224505865703E-08"
-        rpy="0 0 0" />
-      <mass
-        value="7.61618558267862" />
-      <inertia
-        ixx="0.0154217864427058"
-        ixy="-0.00511954641438889"
-        ixz="-2.3601706564385E-08"
-        iyy="0.331882431742015"
-        iyz="7.8595261238882E-09"
-        izz="0.329646226214707" />
+      <origin xyz="-2.191247171692195 2.212576728709783 0.26499652930591" rpy="0 0 0" />
+      <mass value="3.5712219261824" />
+      <inertia ixx="4.5178710929184937" ixy="-4.60984107611678E-18" ixz="-1.06639603029745E-18" iyy="0.0178710929184937" iyz="2.28822482640679E-19" izz="0.0197534933840129" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://project_assem/meshes/Glied2.STL" />
+        <mesh filename="package://project_assem/meshes/base_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://project_assem/meshes/Glied2.STL" />
+        <mesh filename="package://project_assem/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="joint 2"
-    type="continuous">
-    <origin
-      xyz="0 0 0.16273"
-      rpy="0 -1.1634 0" />
-    <parent
-      link="Glied 1" />
-    <child
-      link="Glied2" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="glied3">
+  <link name="Glied1">
     <inertial>
-      <origin
-        xyz="0.279431166583667 0.353458600795466 4.54171324437702E-07"
-        rpy="0 0 0" />
-      <mass
-        value="4.61023011928217" />
-      <inertia
-        ixx="0.00635924136769031"
-        ixy="-0.00758489761194192"
-        ixz="4.36915114714834E-08"
-        iyy="0.237059801819711"
-        iyz="-2.69157998580155E-08"
-        izz="0.235705561776574" />
+      <origin xyz="-4.50175358715499E-06 -0.00218775862016007 0.128411981670438" rpy="0 0 0" />
+      <mass value="8.06345148807656" />
+      <inertia ixx="0.0529083613806504" ixy="7.86227214579632E-07" ixz="-2.75094940755798E-06" iyy="0.0808871662644074" iyz="0.000606168118549723" izz="0.056246854030176" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://project_assem/meshes/glied3.STL" />
+        <mesh filename="package://project_assem/meshes/Glied1.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://project_assem/meshes/glied3.STL" />
+        <mesh filename="package://project_assem/meshes/Glied1.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="link3"
-    type="continuous">
-    <origin
-      xyz="0.585 -0.16334 0"
-      rpy="3.1416 1.1417 3.1416" />
-    <parent
-      link="Glied2" />
-    <child
-      link="glied3" />
-    <axis
-      xyz="0 1 0" />
+  <joint name="Joint1" type="continuous">
+    <origin xyz="-0.019125 -0.35586 0.21258" rpy="1.5708 1.0635 0" />
+    <parent link="base_link" />
+    <child link="Glied1" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.1" friction="0.1"/>
   </joint>
-  <link
-    name="glied4">
+  <link name="Glied2">
     <inertial>
-      <origin
-        xyz="0.225371740919684 6.10622663543836E-16 4.44089209850063E-16"
-        rpy="0 0 0" />
-      <mass
-        value="1.77228640360948" />
-      <inertia
-        ixx="0.00126834058408356"
-        ixy="-5.67579837296162E-17"
-        ixz="-3.86789125034204E-17"
-        iyy="0.0231701314933687"
-        iyz="-4.33680868994202E-19"
-        izz="0.0231701314933687" />
+      <origin xyz="0.269220945811578 0.110266011971796 -7.77224505865703E-08" rpy="0 0 0" />
+      <mass value="7.61618558267862" />
+      <inertia ixx="0.0154217864427058" ixy="-0.00511954641438889" ixz="-2.3601706564385E-08" iyy="0.331882431742015" iyz="7.8595261238882E-09" izz="0.329646226214707" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://project_assem/meshes/glied4.STL" />
+        <mesh filename="package://project_assem/meshes/Glied2.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://project_assem/meshes/glied4.STL" />
+        <mesh filename="package://project_assem/meshes/Glied2.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="joint4"
-    type="continuous">
-    <origin
-      xyz="0.68528 0.36379 0"
-      rpy="-0.94737 0 0.017453" />
-    <parent
-      link="glied3" />
-    <child
-      link="glied4" />
-    <axis
-      xyz="1 0 0" />
+  <joint name="Joint2" type="continuous">
+    <origin xyz="0 0 0.16273" rpy="0 -1.1634 0" />
+    <parent link="Glied1" />
+    <child link="Glied2" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.1" friction="0.1"/>
   </joint>
+  <link name="Glied3">
+    <inertial>
+      <origin xyz="0.279431166583667 0.353458600795466 4.54171324437702E-07" rpy="0 0 0" />
+      <mass value="4.61023011928217" />
+      <inertia ixx="0.00635924136769031" ixy="-0.00758489761194192" ixz="4.36915114714834E-08" iyy="0.237059801819711" iyz="-2.69157998580155E-08" izz="0.235705561776574" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://project_assem/meshes/Glied3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://project_assem/meshes/Glied3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint3" type="continuous">
+    <origin xyz="0.585 -0.16334 0" rpy="3.1416 1.1417 3.1416" />
+    <parent link="Glied2" />
+    <child link="Glied3" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+  <link name="Glied4">
+    <inertial>
+      <origin xyz="0.225371740919684 6.10622663543836E-16 4.44089209850063E-16" rpy="0 0 0" />
+      <mass value="1.77228640360948" />
+      <inertia ixx="0.00126834058408356" ixy="-5.67579837296162E-17" ixz="-3.86789125034204E-17" iyy="0.0231701314933687" iyz="-4.33680868994202E-19" izz="0.0231701314933687" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://project_assem/meshes/Glied4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://project_assem/meshes/Glied4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint4" type="continuous">
+    <origin xyz="0.68528 0.36379 0" rpy="-0.94737 0 0.017453" />
+    <parent link="Glied3" />
+    <child link="Glied4" />
+    <axis xyz="1 0 0" />
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robAssemble</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <transmission name="transmission_Joint1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_Joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission_Joint2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_Joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission_Joint3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Joint3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_Joint3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="transmission_Joint4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Joint4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_Joint4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
 </robot>

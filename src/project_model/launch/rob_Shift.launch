@@ -1,0 +1,15 @@
+<launch>
+  <param name="robot_description" command="cat $(find project_model)/urdf/RobShift.urdf" />
+
+  <rosparam command="load" file="$(find project_model)/config/RobShift_controller.yaml" />
+
+  <node
+    name="spawn_robshift"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-param robot_description -urdf -model rob_shift"
+    output="screen" ns="/robshift"/>
+
+  <node name="controller_spawner_robshift" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="--namespace=robshift Joint1_position_controller Joint2_position_controller Joint3_position_controller Joint4_position_controller Joint5_position_controller Joint6_position_controller joint_state_controller" />
+</launch>
