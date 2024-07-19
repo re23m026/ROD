@@ -1,9 +1,9 @@
 <launch>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="paused" value="true"/>
+    <arg name="paused" value="false"/>
   </include>
 
-  <include file="$(find project_assem)/launch/rob_Assem.launch" ns="/robAssemble" />
+  <include file="$(find project_assem)/launch/robAssemble_gazebo.launch" ns="/robAssemble" />
 
-  <include file="$(find project_model)/launch/rob_Shift.launch" ns="/robshift" />
+  <include file="$(find project_model)/launch/robshift_gazebo.launch" ns="/robshift" />
 </launch>

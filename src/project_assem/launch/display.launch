@@ -3,7 +3,7 @@
     name="model" />
   <param
     name="robot_description"
-    textfile="$(find project_assem)/urdf/Assem1.urdf" />
+    textfile="$(find project_assem)/urdf/RobAssemble.urdf" />
   <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"
