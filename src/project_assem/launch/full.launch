@@ -1,0 +1,10 @@
+<launch>
+  <!-- Gazebo full launch -->
+  <include file="$(find project_assem)/launch/gazebo_full.launch" />
+  
+  <!-- RViz full launch -->
+  <include file="$(find project_assem)/launch/rviz_full.launch" />
+  
+  <!-- Statische Transformation zwischen robAssemble/world und robshift/world -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher_robAssemble_to_robshift" args="0 0 0 0 0 0 robAssemble/world robshift/world" />
+</launch>

@@ -1,0 +1,49 @@
+<launch>
+  <arg name="use_sim_time" default="true" />
+
+  <!-- Laden der Roboterbeschreibungen -->
+  <param name="/robAssemble/robot_description" command="cat $(find project_assem)/urdf/RobAssemble.urdf" />
+  <param name="/robshift/robot_description" command="cat $(find project_model)/urdf/RobShift.urdf" />
+
+  <!-- Laden der RViz-Konfiguration -->
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find project_assem)/urdf/combined_config.rviz"
+    output="screen" />
+
+  <!-- Joint State Publisher für robAssemble -->
+  <node
+    ns="robAssemble"
+    name="robAssemble_joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" />
+
+  <node
+    ns="robAssemble"
+    name="robAssemble_robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher"
+    output="screen">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" value="robAssemble" />
+  </node>
+
+  <!-- Joint State Publisher für robshift -->
+  <node
+    ns="robshift"
+    name="robshift_joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" />
+
+  <node
+    ns="robshift"
+    name="robshift_robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher"
+    output="screen">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" value="robshift" />
+  </node>
+</launch>

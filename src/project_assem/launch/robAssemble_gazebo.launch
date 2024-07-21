@@ -1,15 +1,15 @@
 <launch>
-  <param name="robot_description" command="cat $(find project_assem)/urdf/RobAssemble.urdf" />
-
+  <param name="/robAssemble/robot_description" command="cat $(find project_assem)/urdf/RobAssemble.urdf" />
+  
   <rosparam command="load" file="$(find project_assem)/config/RobAssemble_controller.yaml" />
-
+  
   <node
     name="spawn_robAssemble"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-param robot_description -urdf -model rob_assemble"
+    args="-param /robAssemble/robot_description -urdf -model rob_assemble"
     output="screen"/>
-
+  
   <node name="controller_spawner_robAssem" pkg="controller_manager" type="spawner" respawn="false" output="screen"
-        args="--namespace=robAssemble Joint1_position_controller Joint2_position_controller Joint3_position_controller Joint4_position_controller joint_state_controller" />
+        args="--namespace=/robAssemble Joint1_position_controller Joint2_position_controller Joint3_position_controller Joint4_position_controller joint_state_controller" />
 </launch>
