@@ -11,14 +11,26 @@
     <origin xyz="2 2 -0.15" rpy="-1.5708 0 0"/>
   </joint>
 
-  <link name="base_link">
+  <link
+    name="base_link">
     <inertial>
-      <origin xyz="-2.191247171692195 2.212576728709783 0.26499652930591" rpy="0 0 0" />
-      <mass value="3.5712219261824" />
-      <inertia ixx="4.5178710929184937" ixy="-4.60984107611678E-18" ixz="-1.06639603029745E-18" iyy="0.0178710929184937" iyz="2.28822482640679E-19" izz="0.0197534933840129" />
+      <origin
+        xyz="-0.0191247171692195 0.212576728709783 0.26499652930591"
+        rpy="0 0 0" />
+      <mass
+        value="3.5712219261824" />
+      <inertia
+        ixx="0.0178710929184937"
+        ixy="-2.63631085571847E-18"
+        ixz="-1.06197763837491E-18"
+        iyy="0.0178710929184937"
+        iyz="2.28822482640679E-19"
+        izz="0.0197534933840129" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
         <mesh filename="package://project_assem/meshes/base_link.STL" />
       </geometry>
@@ -35,12 +47,23 @@
   </link>
   <link name="Glied1">
     <inertial>
-      <origin xyz="-4.50175358715499E-06 -0.00218775862016007 0.128411981670438" rpy="0 0 0" />
-      <mass value="8.06345148807656" />
-      <inertia ixx="0.0529083613806504" ixy="7.86227214579632E-07" ixz="-2.75094940755798E-06" iyy="0.0808871662644074" iyz="0.000606168118549723" izz="0.056246854030176" />
+      <origin
+        xyz="-4.50175358725907E-06 -0.00218775862016007 0.128411981670438"
+        rpy="0 0 0" />
+      <mass
+        value="8.06345148807657" />
+      <inertia
+        ixx="0.0529083613806504"
+        ixy="7.86227214595245E-07"
+        ixz="-2.75094940757129E-06"
+        iyy="0.0808871662644074"
+        iyz="0.000606168118549718"
+        izz="0.056246854030176" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
         <mesh filename="package://project_assem/meshes/Glied1.STL" />
       </geometry>
@@ -55,21 +78,46 @@
       </geometry>
     </collision>
   </link>
-  <joint name="Joint1" type="continuous">
-    <origin xyz="-0.019125 -0.35586 0.21258" rpy="1.5708 1.0635 0" />
-    <parent link="base_link" />
-    <child link="Glied1" />
-    <axis xyz="0 0 1" />
-    <dynamics damping="0.1" friction="0.1"/>
+  <joint
+    name="Joint1"
+    type="revolute">
+    <origin
+      xyz="-0.019125 -0.35586 0.21258"
+      rpy="-1.5708 -0.17308 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Glied1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.2"
+      upper="3.2"
+      effort="1000"
+      velocity="0.5" />
+    <dynamics
+      damping="0.1"
+      friction="0.1"/>
   </joint>
   <link name="Glied2">
     <inertial>
-      <origin xyz="0.269220945811578 0.110266011971796 -7.77224505865703E-08" rpy="0 0 0" />
-      <mass value="7.61618558267862" />
-      <inertia ixx="0.0154217864427058" ixy="-0.00511954641438889" ixz="-2.3601706564385E-08" iyy="0.331882431742015" iyz="7.8595261238882E-09" izz="0.329646226214707" />
+      <origin
+        xyz="0.269220985292384 0.171663073603282 -9.71686345274669E-08"
+        rpy="0 0 0" />
+      <mass
+        value="7.61618748268792" />
+      <inertia
+        ixx="0.0154217954955636"
+        ixy="-0.0051195136476789"
+        ixz="3.0807547833113E-08"
+        iyy="0.331882259804166"
+        iyz="1.67733728081033E-08"
+        izz="0.329646037756045" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
         <mesh filename="package://project_assem/meshes/Glied2.STL" />
       </geometry>
@@ -84,21 +132,43 @@
       </geometry>
     </collision>
   </link>
-  <joint name="Joint2" type="continuous">
-    <origin xyz="0 0 0.16273" rpy="0 -1.1634 0" />
-    <parent link="Glied1" />
-    <child link="Glied2" />
-    <axis xyz="0 1 0" />
-    <dynamics damping="0.1" friction="0.1"/>
+  <joint
+      name="Joint2"
+      type="revolute">
+    <origin
+      xyz="0 -0.061397 0.16273"
+      rpy="3.1416 -1.0187 -3.1416" />
+    <parent
+      link="Glied1" />
+    <child
+      link="Glied2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.2"
+      effort="1000"
+      velocity="0.2" />
   </joint>
   <link name="Glied3">
     <inertial>
-      <origin xyz="0.279431166583667 0.353458600795466 4.54171324437702E-07" rpy="0 0 0" />
-      <mass value="4.61023011928217" />
-      <inertia ixx="0.00635924136769031" ixy="-0.00758489761194192" ixz="4.36915114714834E-08" iyy="0.237059801819711" iyz="-2.69157998580155E-08" izz="0.235705561776574" />
+      <origin
+        xyz="0.2794317642991 0.217698025060509 -5.20353155786246E-07"
+        rpy="0 0 0" />
+      <mass
+        value="4.6103173169206" />
+      <inertia
+        ixx="0.0063591327430701"
+        ixy="-0.00758504687755811"
+        ixz="1.68721333240578E-07"
+        iyy="0.23706202767937"
+        iyz="4.16864544858057E-09"
+        izz="0.235707890348388" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
         <mesh filename="package://project_assem/meshes/Glied3.STL" />
       </geometry>
@@ -113,21 +183,43 @@
       </geometry>
     </collision>
   </link>
-  <joint name="Joint3" type="continuous">
-    <origin xyz="0.585 -0.16334 0" rpy="3.1416 1.1417 3.1416" />
-    <parent link="Glied2" />
-    <child link="Glied3" />
-    <axis xyz="0 1 0" />
-    <dynamics damping="0.1" friction="0.1"/>
+  <joint
+    name="Joint3"
+    type="revolute">
+    <origin
+      xyz="0.585 0.033821 0"
+      rpy="3.1416 0.62131 3.1416" />
+    <parent
+      link="Glied2" />
+    <child
+      link="Glied3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.16"
+      upper="3.16"
+      effort="100"
+      velocity="0.5" />
   </joint>
   <link name="Glied4">
     <inertial>
-      <origin xyz="0.225371740919684 6.10622663543836E-16 4.44089209850063E-16" rpy="0 0 0" />
-      <mass value="1.77228640360948" />
-      <inertia ixx="0.00126834058408356" ixy="-5.67579837296162E-17" ixz="-3.86789125034204E-17" iyy="0.0231701314933687" iyz="-4.33680868994202E-19" izz="0.0231701314933687" />
+      <origin
+        xyz="0.264427087435104 -1.11022302462516E-15 4.44089209850063E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.77228640360949" />
+      <inertia
+        ixx="0.00126834058408356"
+        ixy="8.14642407351296E-17"
+        ixz="-4.23380948355589E-17"
+        iyy="0.0231701314933687"
+        iyz="-4.33680868994202E-19"
+        izz="0.0231701314933687" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
         <mesh filename="package://project_assem/meshes/Glied4.STL" />
       </geometry>
@@ -142,12 +234,23 @@
       </geometry>
     </collision>
   </link>
-  <joint name="Joint4" type="continuous">
-    <origin xyz="0.68528 0.36379 0" rpy="-0.94737 0 0.017453" />
-    <parent link="Glied3" />
-    <child link="Glied4" />
-    <axis xyz="1 0 0" />
-    <dynamics damping="0.1" friction="0.1"/>
+  <joint
+    name="Joint4"
+    type="revolute">
+    <origin
+      xyz="0.64623 0.22735 0"
+      rpy="-2.7786 0 0.017453" />
+    <parent
+      link="Glied3" />
+    <child
+      link="Glied4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-10"
+      upper="10"
+      effort="20"
+      velocity="0.2" />
   </joint>
 
   <gazebo>
