@@ -1,4 +1,4 @@
-prefix=/home/chp/ROD/install
+prefix=/home/fhtw_user/catkin_ws/src/fhtw/ROD/install
 
 Name: project_model
 Description: Description of project_model

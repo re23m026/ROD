@@ -1,0 +1,8 @@
+prefix=/home/fhtw_user/catkin_ws/src/fhtw/ROD/install
+
+Name: moveit_assem
+Description: Description of moveit_assem
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
