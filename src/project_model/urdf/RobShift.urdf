@@ -150,7 +150,7 @@
     </inertial>
     <visual>
       <origin
-        xyz="0 0 0"
+        xyz="-0.2994 -0.5517 -0.1"
         rpy="0 0 0" />
       <geometry>
         <mesh
@@ -378,8 +378,8 @@
     name="Joint3"
     type="revolute">
     <origin
-      xyz="-1.2 0 0.36512"
-      rpy="0 0 -2.3798" />
+      xyz="-1.0358 -0.6058 0.465"
+      rpy="0 0 3.14159" />
     <parent
       link="Link2" />
     <child
