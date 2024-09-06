@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/chp/ROD/build'
+export PWD='/home/fhtw_user/catkin_ws/src/fhtw/ROD/build'

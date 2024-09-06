@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/chp/ROD/install/setup.sh
+    local-name: /home/fhtw_user/catkin_ws/src/fhtw/ROD/install/setup.sh
