@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/gtest/cmake_install.cmake")
   include("/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/moveit_assem/cmake_install.cmake")
+  include("/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/panda_moveit_config/cmake_install.cmake")
   include("/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/environment/cmake_install.cmake")
   include("/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/project_assem/cmake_install.cmake")
   include("/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/project_model/cmake_install.cmake")

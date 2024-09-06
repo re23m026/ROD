@@ -459,6 +459,12 @@ moveit_assem_BINARY_DIR:STATIC=/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/move
 moveit_assem_SOURCE_DIR:STATIC=/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_assem
 
 //Value Computed by CMake
+panda_moveit_config_BINARY_DIR:STATIC=/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/panda_moveit_config
+
+//Value Computed by CMake
+panda_moveit_config_SOURCE_DIR:STATIC=/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/panda_moveit_config
+
+//Value Computed by CMake
 project_assem_BINARY_DIR:STATIC=/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/project_assem
 
 //Value Computed by CMake
@@ -621,7 +627,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -6,6 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("moveit_assem")
+subdirs("panda_moveit_config")
 subdirs("environment")
 subdirs("project_assem")
 subdirs("project_model")
