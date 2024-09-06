@@ -150,11 +150,11 @@
     </inertial>
     <visual>
       <origin
-        xyz="-0.2994 -0.5517 -0.1"
+        xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_model/meshes/Link3.STL" />
+          filename="package://project_model/meshes/Link3_3.STL" />
       </geometry>
       <material
         name="">
@@ -168,7 +168,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_model/meshes/Link3.STL" />
+          filename="package://project_model/meshes/Link3_3.STL" />
       </geometry>
     </collision>
   </link>
@@ -194,7 +194,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_model/meshes/Link4.STL" />
+          filename="package://project_model/meshes/Link4_2.STL" />
       </geometry>
       <material
         name="">
@@ -208,7 +208,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_model/meshes/Link4.STL" />
+          filename="package://project_model/meshes/Link4_2.STL" />
       </geometry>
     </collision>
   </link>
@@ -234,7 +234,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_model/meshes/Link5.STL" />
+          filename="package://project_model/meshes/Link5_4.STL" />
       </geometry>
       <material
         name="">
@@ -248,7 +248,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_model/meshes/Link5.STL" />
+          filename="package://project_model/meshes/Link5_4.STL" />
       </geometry>
     </collision>
   </link>
@@ -274,7 +274,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_model/meshes/Link6.STL" />
+          filename="package://project_model/meshes/Link6_6.STL" />
       </geometry>
       <material
         name="">
@@ -288,7 +288,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://project_model/meshes/Link6.STL" />
+          filename="package://project_model/meshes/Link6_6.STL" />
       </geometry>
     </collision>
   </link>
@@ -379,7 +379,7 @@
     type="revolute">
     <origin
       xyz="-1.0358 -0.6058 0.465"
-      rpy="0 0 3.14159" />
+      rpy="0 0 0" />
     <parent
       link="Link2" />
     <child
@@ -399,8 +399,8 @@
     name="Joint4"
     type="revolute">
     <origin
-      xyz="-1.15 -0.039802 0.075259"
-      rpy="-1.5708 0.49527 1.5708" />
+      xyz="-0.0435 1.275 -0.025"
+      rpy="-1.5708 0 0" />
     <parent
       link="Link3" />
     <child
@@ -408,8 +408,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-1.0"
-      upper="1.0"
+      lower="-3"
+      upper="3"
       effort="100.0"
       velocity="0.1" />
     <dynamics
@@ -420,8 +420,8 @@
     name="Joint5"
     type="revolute">
     <origin
-      xyz="0 0 0.14632"
-      rpy="0 0 -2.9919" />
+      xyz="0 0 0"
+      rpy="0 0 0" />
     <parent
       link="Link4" />
     <child
@@ -441,21 +441,21 @@
     name="Joint6"
     type="revolute">
     <origin
-      xyz="-0.0088287 -0.013655 0.24866"
-      rpy="-1.6508 0.50975 2.5265" />
+      xyz="0.00008 -0.00005 0.2068"
+      rpy="0 0 0" />
     <parent
       link="Link5" />
     <child
       link="Link6" />
     <axis
-      xyz="-0.068076 -0.12139 0.99027" />
+      xyz="0 1 0" />
     <limit
-      lower="0"
-      upper="0"
-      effort="1000.0"
-      velocity="0.5" />
+      lower="-2"
+      upper="2"
+      effort="100.0"
+      velocity="0.2" />
     <dynamics
-      damping="0.1"
+      damping="0.2"
       friction="0.2" />
   </joint>
   <joint

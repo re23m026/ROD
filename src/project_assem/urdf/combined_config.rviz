@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /robAssemble1
         - /robshift1
+        - /Axes1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz/Selection
@@ -158,6 +159,15 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/Axes
+      Enabled: true
+      Length: 0.5
+      Name: Axes
+      Radius: 0.009999999776482582
+      Reference Frame: robshift/Link4
+      Show Trail: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -186,7 +196,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 10
+      Distance: 3.149573802947998
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -194,17 +204,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: -0.2865244746208191
+        Y: -0.6150012612342834
+        Z: 1.0415992736816406
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7253982424736023
+      Pitch: 0.4503985047340393
       Target Frame: <Fixed Frame>
-      Yaw: 6.0485663414001465
+      Yaw: 5.6635661125183105
     Saved: ~
 Window Geometry:
   Displays:
@@ -223,4 +233,4 @@ Window Geometry:
     collapsed: false
   Width: 1200
   X: 60
-  Y: 23
+  Y: 0
