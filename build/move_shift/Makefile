@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/fhtw_user/catkin_ws/src/fhtw/ROD/build/CMakeFiles /home/fhtw_user/catkin_ws/src/fhtw/ROD/build/panda_moveit_config/CMakeFiles/progress.marks
-	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(MAKE) -f CMakeFiles/Makefile2 panda_moveit_config/all
+	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/fhtw_user/catkin_ws/src/fhtw/ROD/build/CMakeFiles /home/fhtw_user/catkin_ws/src/fhtw/ROD/build/move_shift/CMakeFiles/progress.marks
+	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(MAKE) -f CMakeFiles/Makefile2 move_shift/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhtw_user/catkin_ws/src/fhtw/ROD/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(MAKE) -f CMakeFiles/Makefile2 panda_moveit_config/clean
+	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(MAKE) -f CMakeFiles/Makefile2 move_shift/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,12 +154,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(MAKE) -f CMakeFiles/Makefile2 panda_moveit_config/preinstall
+	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(MAKE) -f CMakeFiles/Makefile2 move_shift/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(MAKE) -f CMakeFiles/Makefile2 panda_moveit_config/preinstall
+	cd /home/fhtw_user/catkin_ws/src/fhtw/ROD/build && $(MAKE) -f CMakeFiles/Makefile2 move_shift/preinstall
 .PHONY : preinstall/fast
 
 # clear depends

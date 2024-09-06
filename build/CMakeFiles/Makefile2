@@ -54,6 +54,8 @@ CMAKE_BINARY_DIR = /home/fhtw_user/catkin_ws/src/fhtw/ROD/build
 
 # The main recursive "all" target.
 all: gtest/all
+all: move_assemble/all
+all: move_shift/all
 all: panda_moveit_config/all
 all: environment/all
 all: project_assem/all
@@ -63,6 +65,8 @@ all: project_model/all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
+preinstall: move_assemble/preinstall
+preinstall: move_shift/preinstall
 preinstall: panda_moveit_config/preinstall
 preinstall: environment/preinstall
 preinstall: project_assem/preinstall
@@ -77,6 +81,8 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
+clean: move_assemble/clean
+clean: move_shift/clean
 clean: panda_moveit_config/clean
 clean: environment/clean
 clean: project_assem/clean
@@ -160,6 +166,42 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/clean
 
 #=============================================================================
+# Directory level rules for directory move_assemble
+
+# Recursive "all" directory target.
+move_assemble/all:
+
+.PHONY : move_assemble/all
+
+# Recursive "preinstall" directory target.
+move_assemble/preinstall:
+
+.PHONY : move_assemble/preinstall
+
+# Recursive "clean" directory target.
+move_assemble/clean: move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : move_assemble/clean
+
+#=============================================================================
+# Directory level rules for directory move_shift
+
+# Recursive "all" directory target.
+move_shift/all:
+
+.PHONY : move_shift/all
+
+# Recursive "preinstall" directory target.
+move_shift/preinstall:
+
+.PHONY : move_shift/preinstall
+
+# Recursive "clean" directory target.
+move_shift/clean:
+
+.PHONY : move_shift/clean
+
+#=============================================================================
 # Directory level rules for directory panda_moveit_config
 
 # Recursive "all" directory target.
@@ -173,7 +215,7 @@ panda_moveit_config/preinstall:
 .PHONY : panda_moveit_config/preinstall
 
 # Recursive "clean" directory target.
-panda_moveit_config/clean: panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
+panda_moveit_config/clean:
 
 .PHONY : panda_moveit_config/clean
 
@@ -458,31 +500,31 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir
+# Target rules for target move_assemble/CMakeFiles/_catkin_empty_exported_target.dir
 
 # All Build rule for target.
-panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build
+move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/build.make move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/build.make move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all
+.PHONY : move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/all
 
 # Build rule for subdir invocation for target.
-panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhtw_user/catkin_ws/src/fhtw/ROD/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fhtw_user/catkin_ws/src/fhtw/ROD/build/CMakeFiles 0
-.PHONY : panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-_catkin_empty_exported_target: panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/rule
+_catkin_empty_exported_target: move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 .PHONY : _catkin_empty_exported_target
 
 # clean rule for target.
-panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/build.make panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : panda_moveit_config/CMakeFiles/_catkin_empty_exported_target.dir/clean
+move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/build.make move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
