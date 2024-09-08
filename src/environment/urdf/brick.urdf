@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="brick">
+
+  <link name="world"/>
+  <joint name="brick_to_world" type="floating">
+    <parent link="world"/>
+    <child link="brick"/>
+    <origin xyz="-2 -2 3" rpy="0 0 0"/>
+  </joint>
+
+  <link
+    name="brick">
+    <inertial>
+      <origin
+        xyz="-0.0504931185552664 -0.0121385028318173 0.034891250158239"
+        rpy="0 0 0" />
+      <mass
+        value="9.7387642147252" />
+      <inertia
+        ixx="0.0725479577844421"
+        ixy="1.25978871431953E-18"
+        ixz="-4.64563709722529E-18"
+        iyy="0.160778029346143"
+        iyz="2.43383024833014E-18"
+        izz="0.17244247038477" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://environment/meshes/brick/brick.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://environment/meshes/brick/brick.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/brick</robotNamespace> 
+    </plugin>
+
+    <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+      <robotNamespace>/brick</robotNamespace>
+      <bodyName>brick</bodyName>
+      <frameName>world</frameName>
+      <updateRate>50.0</updateRate>
+      <topicName>/brick/tf</topicName> 
+    </plugin>
+  </gazebo>
+
+</robot>

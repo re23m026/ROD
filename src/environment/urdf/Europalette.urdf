@@ -15,7 +15,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://environment/meshes/Europoolpalette_scaled.stl" />
+        <mesh filename="package://environment/meshes/europalette/Europoolpalette_scaled.stl" />
       </geometry>
       <material name="">
         <color rgba="0.894117647058823 0.803921568627451 0.690196078431373 1" />
@@ -24,7 +24,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://environment/meshes/Europoolpalette_scaled.stl" />
+        <mesh filename="package://environment/meshes/europalette/Europoolpalette_scaled.stl" />
       </geometry>
     </collision>
   </link>

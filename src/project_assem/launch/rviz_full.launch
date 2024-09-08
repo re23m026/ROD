@@ -5,6 +5,8 @@
   <param name="/robshift/robot_description" command="cat $(find project_model)/urdf/RobShift.urdf" />
   <param name="/europalette/robot_description" command="cat $(find environment)/urdf/Europalette.urdf" /> <!-- Only in RViz -->
   <param name="/conveyor/robot_description" command="cat $(find environment)/urdf/conveyor.urdf" /> <!-- Only in RViz -->
+  <param name="/brick/robot_description" command="cat $(find environment)/urdf/brick.urdf" /> <!-- Only in RViz -->
+
 
   <node
     name="rviz"
@@ -53,7 +55,18 @@
     <param name="tf_prefix" value="conveyor" />
   </node>
 
+    <node
+    ns="brick"
+    name="brick_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher"
+    output="screen">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" value="brick" />
+  </node>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_conveyor" args="0 0 0 0 0 0 1 world conveyor/world" />
 
   <node name="move_europalette" pkg="environment" type="move_europalette.py" output="screen" />
-
+  <node name="move_brick" pkg="environment" type="move_brick.py" output="screen" />
 </launch>
