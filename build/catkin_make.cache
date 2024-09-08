@@ -1,2 +1,0 @@
-environment:project_assem:project_model
--DCATKIN_DEVEL_PREFIX=/home/chp/ROD/devel -DCMAKE_INSTALL_PREFIX=/home/chp/ROD/install -G Unix Makefiles

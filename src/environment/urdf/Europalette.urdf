@@ -2,46 +2,56 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="Europalette">
-  <link
-    name="base_link">
+
+
+<robot name="europalette">
+
+  <link name="world" />
+
+  <joint name="europalette_to_world" type="floating">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="-2 -2 0.1" rpy="0 0 0"/>
+  </joint>
+
+
+  <link name="base_link">
     <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="1.5708 -3.14159 1.5708" />
-      <mass
-        value="45.11865" />
-      <inertia
-        ixx="3.1330716772058"
-        ixy="-3.52248840062748E-17"
-        ixz="9.836549879291E-19"
-        iyy="0.462522380993745"
-        iyz="6.13082306634959E-18"
-        izz="3.58108726709954" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="45.11865" />
+      <inertia ixx="3.1330716772058" ixy="-3.52248840062748E-17" ixz="9.836549879291E-19" iyy="0.462522380993745" iyz="6.13082306634959E-18" izz="3.58108726709954" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="1.5708 -3.14159 1.5708" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://environment/meshes/base_link.STL" />
+        <mesh filename="package://environment/meshes/Europoolpalette_scaled.stl" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.894117647058823 0.803921568627451 0.690196078431373 1" />
+      <material name="">
+        <color rgba="0.894117647058823 0.803921568627451 0.690196078431373 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="1.5708 -3.14159 1.5708" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://environment/meshes/base_link.STL" />
+        <mesh filename="package://environment/meshes/Europoolpalette_scaled.stl" />
       </geometry>
     </collision>
   </link>
+
+  <!-- Namespace für Gazebo-Plugins -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/europalette</robotNamespace> 
+    </plugin>
+
+    <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+      <robotNamespace>/europalette</robotNamespace>
+      <bodyName>base_link</bodyName>
+      <frameName>world</frameName>
+      <updateRate>50.0</updateRate>
+      <topicName>/europalette/tf</topicName> 
+    </plugin>
+  </gazebo>
+
 </robot>
+

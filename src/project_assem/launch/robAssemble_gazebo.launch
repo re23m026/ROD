@@ -1,8 +1,15 @@
 <launch>
+
   <param name="/robAssemble/robot_description" command="cat $(find project_assem)/urdf/RobAssemble.urdf" />
   
   <rosparam command="load" file="$(find project_assem)/config/RobAssemble_controller.yaml" />
   
+  <node
+    pkg="tf2_ros"
+    type="static_transform_publisher"
+    name="static_transform_publisher_robAssemble_to_world"
+    args="0 0 0 0 0 0 world robAssemble/world" />
+
   <node
     name="spawn_robAssemble"
     pkg="gazebo_ros"

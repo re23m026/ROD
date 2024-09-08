@@ -1,8 +1,0 @@
-prefix=/home/chp/ROD/install
-
-Name: project_assem
-Description: Description of project_assem
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

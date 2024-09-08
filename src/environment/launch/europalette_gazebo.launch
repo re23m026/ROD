@@ -1,0 +1,19 @@
+<launch>
+  <!-- Robot description für Europalette -->
+  <param name="/europalette/robot_description" command="cat $(find environment)/urdf/Europalette.urdf" />
+
+
+  <node
+    name="spawn_europalette"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find environment)/urdf/Europalette.urdf -urdf -model europalette"
+    output="screen" />
+
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+    
+</launch>

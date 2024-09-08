@@ -4,6 +4,12 @@
   <rosparam command="load" file="$(find project_model)/config/RobShift_controller.yaml" />
   
   <node
+    pkg="tf2_ros"
+    type="static_transform_publisher"
+    name="static_transform_publisher_robshift_to_world"
+    args="0 0 0 0 0 0 world robshift/world" />
+
+  <node
     name="spawn_robshift"
     pkg="gazebo_ros"
     type="spawn_model"

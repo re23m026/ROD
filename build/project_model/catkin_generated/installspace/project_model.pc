@@ -1,8 +1,0 @@
-prefix=/home/chp/ROD/install
-
-Name: project_model
-Description: Description of project_model
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
