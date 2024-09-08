@@ -32,19 +32,25 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://project_assem/meshes/base_link_2.STL" />
+        <mesh 
+          filename="package://project_assem/meshes/base_link_2.STL" />
       </geometry>
-      <material name="">
+      <material 
+        name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin 
+        xyz="0 0 0" 
+        rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://project_assem/meshes/base_link_2.STL" />
+        <mesh 
+        filename="package://project_assem/meshes/base_link_2.STL" />
       </geometry>
     </collision>
   </link>
+
   <link name="Link1">
     <inertial>
       <origin
@@ -78,6 +84,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Joint1"
     type="revolute">
@@ -99,6 +106,7 @@
       damping="0.1"
       friction="0.1"/>
   </joint>
+
   <link name="Link2">
     <inertial>
       <origin
@@ -132,6 +140,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
       name="Joint2"
     type="revolute">
@@ -183,6 +192,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Joint3"
     type="revolute">
@@ -201,6 +211,7 @@
       effort="100"
       velocity="0.5" />
   </joint>
+
   <link name="Link4">
     <inertial>
       <origin
@@ -234,6 +245,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Joint4"
     type="continuous">
@@ -252,6 +264,7 @@
       effort="20"
       velocity="0.2" />
   </joint>
+
     <link
     name="Link5">
     <inertial>
@@ -292,6 +305,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="Joint5"
     type="continuous">
@@ -310,6 +324,7 @@
       effort="100"
       velocity="0.1" />
   </joint>
+  
   <link
     name="Endeffektor">
     <inertial>
@@ -350,6 +365,7 @@
       </geometry>
     </collision>
   </link>
+  
   <joint
     name="Endeffektor_Joint"
     type="revolute">

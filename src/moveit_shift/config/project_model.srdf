@@ -25,18 +25,18 @@
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="A1" group="moveit_shift">
-        <joint name="Joint1" value="-1.1952"/>
-        <joint name="Joint2" value="-0.6772"/>
-        <joint name="Joint3" value="-0.6304"/>
-        <joint name="Joint4" value="-0.8478"/>
-        <joint name="Joint_Vakuumgreifer" value="-0.6829"/>
+        <joint name="Joint1" value="1.7415"/>
+        <joint name="Joint2" value="-0.1293"/>
+        <joint name="Joint3" value="0.4565"/>
+        <joint name="Joint4" value="-1.5652"/>
+        <joint name="Joint_Vakuumgreifer" value="0.7512"/>
     </group_state>
-    <group_state name="A2" group="moveit_shift">
-        <joint name="Joint1" value="-1.1952"/>
-        <joint name="Joint2" value="0.0467"/>
-        <joint name="Joint3" value="0.3043"/>
-        <joint name="Joint4" value="-0.8478"/>
-        <joint name="Joint_Vakuumgreifer" value="-0.6829"/>
+    <group_state name="home" group="moveit_shift">
+        <joint name="Joint1" value="0.9561"/>
+        <joint name="Joint2" value="-0.1293"/>
+        <joint name="Joint3" value="-0.3696"/>
+        <joint name="Joint4" value="-1.5652"/>
+        <joint name="Joint_Vakuumgreifer" value="0.7512"/>
     </group_state>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="Link1" link2="Link2" reason="Adjacent"/>
