@@ -56,6 +56,8 @@ CMAKE_BINARY_DIR = /home/fhtw_user/catkin_ws/src/fhtw/ROD/build
 all: gtest/all
 all: move_assemble/all
 all: move_shift/all
+all: moveit_assem/all
+all: moveit_shift/all
 all: panda_moveit_config/all
 all: environment/all
 all: project_assem/all
@@ -67,6 +69,8 @@ all: project_model/all
 preinstall: gtest/preinstall
 preinstall: move_assemble/preinstall
 preinstall: move_shift/preinstall
+preinstall: moveit_assem/preinstall
+preinstall: moveit_shift/preinstall
 preinstall: panda_moveit_config/preinstall
 preinstall: environment/preinstall
 preinstall: project_assem/preinstall
@@ -83,6 +87,8 @@ clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
 clean: move_assemble/clean
 clean: move_shift/clean
+clean: moveit_assem/clean
+clean: moveit_shift/clean
 clean: panda_moveit_config/clean
 clean: environment/clean
 clean: project_assem/clean
@@ -200,6 +206,42 @@ move_shift/preinstall:
 move_shift/clean:
 
 .PHONY : move_shift/clean
+
+#=============================================================================
+# Directory level rules for directory moveit_assem
+
+# Recursive "all" directory target.
+moveit_assem/all:
+
+.PHONY : moveit_assem/all
+
+# Recursive "preinstall" directory target.
+moveit_assem/preinstall:
+
+.PHONY : moveit_assem/preinstall
+
+# Recursive "clean" directory target.
+moveit_assem/clean:
+
+.PHONY : moveit_assem/clean
+
+#=============================================================================
+# Directory level rules for directory moveit_shift
+
+# Recursive "all" directory target.
+moveit_shift/all:
+
+.PHONY : moveit_shift/all
+
+# Recursive "preinstall" directory target.
+moveit_shift/preinstall:
+
+.PHONY : moveit_shift/preinstall
+
+# Recursive "clean" directory target.
+moveit_shift/clean:
+
+.PHONY : moveit_shift/clean
 
 #=============================================================================
 # Directory level rules for directory panda_moveit_config

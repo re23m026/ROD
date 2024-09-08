@@ -1,2 +1,2 @@
-environment:move_assemble:move_shift:panda_moveit_config:project_assem:project_model
+environment:move_assemble:move_shift:moveit_assem:moveit_shift:panda_moveit_config:project_assem:project_model
 -DCATKIN_DEVEL_PREFIX=/home/fhtw_user/catkin_ws/src/fhtw/ROD/devel -DCMAKE_INSTALL_PREFIX=/home/fhtw_user/catkin_ws/src/fhtw/ROD/install -G Unix Makefiles
