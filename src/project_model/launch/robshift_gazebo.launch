@@ -22,5 +22,5 @@
     type="spawner"
     respawn="false"
     output="screen"
-    args="--namespace=/robshift Joint1_position_controller Joint2_position_controller Joint3_position_controller Joint4_position_controller Joint5_position_controller Joint6_position_controller joint_state_controller" />
+    args="--namespace=/robshift Joint1_position_controller Joint2_position_controller Joint3_position_controller Joint4_position_controller Joint_Vakuumgreifer_position_controller joint_state_controller" />
 </launch>
