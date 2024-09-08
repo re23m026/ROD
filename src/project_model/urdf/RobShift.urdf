@@ -10,79 +10,141 @@
         <origin xyz="0 0 0.2" rpy="0 0 0" />
     </joint>
     <link name="base_link">
-        <inertial>
-            <origin xyz="0.0464613483877656 0.0140707076805598 0.0203480222228135" rpy="0 0 0" />
-            <mass value="30.1843359271744" />
-            <inertia ixx="0.502694922185776" ixy="-1.48230765769498E-18" ixz="2.78127629703785E-17" iyy="0.502694922185776" iyz="-1.46381053222201E-17" izz="0.740436652883217" />
-        </inertial>
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://project_model/meshes/base_link.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://project_model/meshes/base_link.STL" />
-            </geometry>
-        </collision>
+    <inertial>
+      <origin
+        xyz="-0.41716 -0.22524 -0.062655"
+        rpy="0 0 0" />
+      <mass
+        value="30.184" />
+      <inertia
+        ixx="0.50269"
+        ixy="6.6303E-18"
+        ixz="-5.6208E-18"
+        iyy="0.50269"
+        iyz="2.4498E-17"
+        izz="0.74044" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_model/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_model/meshes/base_link.STL" />
+      </geometry>
+    </collision>
     </link>
     <link name="Link1">
-        <inertial>
-            <origin xyz="0.0793572464538077 -0.00124591678102029 0.220458925407225" rpy="0 0 0" />
-            <mass value="85.6566874789417" />
-            <inertia ixx="1.54688392454027" ixy="-0.0456850642678114" ixz="-0.35476451485234" iyy="6.7389510767348" iyz="0.00394956847462728" izz="6.77710018420679" />
+         <inertial>
+            <origin
+                xyz="0.079357 -0.0012459 0.22046"
+                rpy="0 0 0" />
+            <mass
+                value="85.657" />
+            <inertia
+                ixx="1.5469"
+                ixy="-0.045685"
+                ixz="-0.35476"
+                iyy="6.739"
+                iyz="0.0039495"
+                izz="6.7771" />
         </inertial>
         <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://project_model/meshes/Link1.STL" />
+                <mesh
+                filename="package://project_model/meshes/Link1.STL" />
             </geometry>
-            <material name="">
-                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            <material
+                name="">
+                <color
+                rgba="0.79216 0.81961 0.93333 1" />
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://project_model/meshes/Link1.STL" />
+                <mesh
+                filename="package://project_model/meshes/Link1.STL" />
             </geometry>
         </collision>
     </link>
     <link name="Link2">
         <inertial>
-            <origin xyz="-0.594272292717518 4.6711666756849E-09 0.262790079429743" rpy="0 0 0" />
-            <mass value="51.8329786183893" />
-            <inertia ixx="0.355230142854774" ixy="3.6403220299297E-09" ixz="0.211286622831184" iyy="8.51616763421488" iyz="2.1000124050356E-08" izz="8.45194963606366" />
-        </inertial>
+            <origin
+                xyz="-0.594272331620716 7.00473512527111E-09 0.262790080771701"
+                rpy="0 0 0" />
+            <mass
+                value="51.8329784346567" />
+            <inertia
+                ixx="0.355230135223329"
+                ixy="4.79417319732001E-09"
+                ixz="0.211286603259331"
+                iyy="8.51616761981559"
+                iyz="3.19852841073906E-09"
+                izz="8.45194961332558" />
+       </inertial>
         <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://project_model/meshes/Link2.STL" />
+                <mesh
+                filename="package://project_model/meshes/Link2.STL" />
             </geometry>
-            <material name="">
-                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            <material
+                name="">
+                <color
+                rgba="0.79216 0.81961 0.93333 1" />
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://project_model/meshes/Link2.STL" />
+                <mesh
+                filename="package://project_model/meshes/Link2.STL" />
             </geometry>
         </collision>
     </link>
     <link name="Link3">
         <inertial>
-            <origin xyz="-0.440004422742138 -0.0153190704328603 0.0756035871012935" rpy="0 0 0" />
-            <mass value="27.6329069261582" />
-            <inertia ixx="0.105723642243395" ixy="-0.133061351411289" ixz="-0.00842003783200069" iyy="3.88562710428054" iyz="-0.00029340463766086" izz="3.89906166668563" />
+            <origin
+                xyz="-0.44 -0.015319 0.045267"
+                rpy="0 0 0" />
+            <mass
+                value="27.633" />
+            <inertia
+                ixx="0.10572"
+                ixy="-0.13306"
+                ixz="-0.0084199"
+                iyy="3.8856"
+                iyz="-0.00029341"
+                izz="3.8991" />
         </inertial>
         <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
             <geometry>
                 <mesh filename="package://project_model/meshes/Link3_3.STL" />
             </geometry>
@@ -99,14 +161,25 @@
     </link>
     <link name="Link4">
         <inertial>
-            <origin xyz="8.88178419700125E-16 -8.32667268468867E-16 0.137913845594654" rpy="0 0 0" />
-            <mass value="0.850036432245057" />
-            <inertia ixx="0.00243540489143828" ixy="5.42101086242752E-20" ixz="-1.02592630571441E-17" iyy="0.00243540489143828" iyz="1.08826793063233E-17" izz="0.000840064820813022" />
+            <origin
+                xyz="0.12731 4.4464E-07 1.0846E-06"
+                rpy="0 0 0" />
+            <mass
+                value="1.7447" />
+            <inertia
+                ixx="0.0019413"
+                ixy="-5.5825E-07"
+                ixz="-8.8735E-07"
+                iyy="0.0093006"
+                iyz="1.4302E-06"
+                izz="0.0093021" />
         </inertial>
         <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://project_model/meshes/Link4_2.STL" />
+                <mesh filename="package://project_model/meshes/Link4.STL" />
             </geometry>
             <material name="">
                 <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -115,74 +188,48 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://project_model/meshes/Link4_2.STL" />
+                <mesh filename="package://project_model/meshes/Link4.STL" />
             </geometry>
         </collision>
     </link>
-    <link name="Link5">
+    <link
+        name="Vakuumgreifer">
         <inertial>
-            <origin xyz="-1.49441394814431E-07 4.70286854292734E-07 0.148908337541607" rpy="0 0 0" />
-            <mass value="1.02538589602909" />
-            <inertia ixx="0.00421724348647574" ixy="2.57301639363728E-06" ixz="6.86480086563236E-08" iyy="0.00421953119624286" iyz="3.04276409060288E-08" izz="0.00080534690693793" />
+        <origin
+            xyz="-3.3311E-05 -2.4035E-05 0.09656"
+            rpy="0 0 0" />
+        <mass
+            value="0.87056" />
+        <inertia
+            ixx="0.003077"
+            ixy="2.0868E-06"
+            ixz="7.0458E-07"
+            iyy="0.0019201"
+            iyz="-1.2039E-06"
+            izz="0.0042488" />
         </inertial>
         <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://project_model/meshes/Link5_4.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-            </material>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="package://project_model/meshes/Vakuumgreifer.STL" />
+        </geometry>
+        <material
+            name="">
+            <color
+            rgba="0.79216 0.81961 0.93333 1" />
+        </material>
         </visual>
         <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://project_model/meshes/Link5_4.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <link name="Link6">
-        <inertial>
-            <origin xyz="7.86188358858908E-09 -0.105371321991731 -0.0162962824427068" rpy="0 0 0" />
-            <mass value="1.55208868418314" />
-            <inertia ixx="0.00977140293103126" ixy="1.39499086587724E-09" ixz="1.00101813773831E-11" iyy="0.0031307636496264" iyz="3.58711938752416E-09" izz="0.0081378067900355" />
-        </inertial>
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://project_model/meshes/Link6_6.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://project_model/meshes/Link6_6.STL" />
-            </geometry>
-        </collision>
-    </link>
-    <link name="Endeffektor">
-        <inertial>
-            <origin xyz="-0.000523241226428439 1.13688218261743E-06 -0.0732819569846882" rpy="0 0 0" />
-            <mass value="0.0538557964417455" />
-            <inertia ixx="3.19873091994393E-05" ixy="6.26001110579541E-11" ixz="-2.1207796198611E-06" iyy="3.23944062299894E-05" iyz="-2.51147441159055E-10" izz="1.16801043927016E-05" />
-        </inertial>
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://project_model/meshes/Endeffektor.STL" />
-            </geometry>
-            <material name="">
-                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-            </material>
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <mesh filename="package://project_model/meshes/Endeffektor.STL" />
-            </geometry>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="package://project_model/meshes/Vakuumgreifer.STL" />
+        </geometry>
         </collision>
     </link>
     <joint name="Joint1" type="revolute">
@@ -210,36 +257,25 @@
         <dynamics damping="0.1" friction="0.2" />
     </joint>
     <joint name="Joint4" type="revolute">
-        <origin xyz="-0.0435 1.275 -0.025" rpy="-1.5708 0 0" />
+        <origin xyz="-0.0435 1.21 -0.025" rpy="0 0 1.5708" />
         <parent link="Link3" />
         <child link="Link4" />
         <axis xyz="0 0 1" />
         <limit lower="-3" upper="3" effort="100.0" velocity="0.1" />
         <dynamics damping="0.1" friction="0.2" />
     </joint>
-    <joint name="Joint5" type="revolute">
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <parent link="Link4" />
-        <child link="Link5" />
-        <axis xyz="0 0 1" />
-        <limit lower="0" upper="0" effort="1000.0" velocity="0.5" />
-        <dynamics damping="0.1" friction="0.2" />
-    </joint>
-    <joint name="Joint6" type="revolute">
-        <origin xyz="0.00008 -0.00005 0.2068" rpy="0 0 0" />
-        <parent link="Link5" />
-        <child link="Link6" />
-        <axis xyz="0 1 0" />
-        <limit lower="-2" upper="2" effort="100.0" velocity="0.2" />
-        <dynamics damping="0.2" friction="0.2" />
-    </joint>
-    <joint name="Endeffektor_Joint" type="revolute">
-        <origin xyz="0 -0.15357 -0.016296" rpy="1.5708 0.90331 3.1416" />
-        <parent link="Link6" />
-        <child link="Endeffektor" />
-        <axis xyz="0.18605 0.37106 0.90978" />
-        <limit lower="0" upper="0" effort="1000.0" velocity="0.5" />
-        <dynamics damping="0.1" friction="0.2" />
+    <joint
+        name="Joint_Vakuumgreifer"
+        type="continuous">
+        <origin
+        xyz="0.28437 0.0023885 0.0039722"
+        rpy="2.4444 -0.63915 0.46331" />
+        <parent
+        link="Link4" />
+        <child
+        link="Vakuumgreifer" />
+        <axis
+        xyz="0 1 0" />
     </joint>
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
@@ -286,43 +322,15 @@
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
-    <transmission name="transmission_Joint5">
+    <transmission name="transmission_Joint_Vakuumgreifer">
         <type>transmission_interface/SimpleTransmission</type>
-        <joint name="Joint5">
+        <joint name="Joint_Vakuumgreifer">
             <hardwareInterface>EffortJointInterface</hardwareInterface>
         </joint>
-        <actuator name="motor_Joint5">
+        <actuator name="motor_Joint_Vakuumgreifer">
             <hardwareInterface>EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
     </transmission>
-    <transmission name="transmission_Joint6">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="Joint6">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="motor_Joint6">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
-    <transmission name="trans_Endeffektor_Joint">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="Endeffektor_Joint">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        </joint>
-        <actuator name="Endeffektor_Joint_motor">
-            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-            <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
-    <gazebo>
-    <plugin name="conveyor_belt_plugin" filename="libROSConveyorBeltPlugin.so">
-        <robot_namespace>/robot_ns</robot_namespace>
-        <link>belt_link</link>
-        <update_rate>10</update_rate>
-        <max_velocity>0.2</max_velocity>
-    </plugin>
-    </gazebo>
 </robot>
 

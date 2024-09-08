@@ -1,0 +1,11 @@
+controller_list:
+  - name: control_shift
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Joint1
+      - Joint2
+      - Joint3
+      - Joint4
+      - Joint_Vakuumgreifer

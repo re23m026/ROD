@@ -20,14 +20,9 @@ robshift:
     joint: Joint4
     pid: {p: 100.0, i: 0.01, d: 1.0}
 
-  Joint5_position_controller:
+  Joint_Vakuumgreifer_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Joint5
-    pid: {p: 100.0, i: 0.01, d: 1.0}
-
-  Joint6_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: Joint6
+    joint: Joint_Vakuumgreifer
     pid: {p: 100.0, i: 0.01, d: 1.0}
 
   joint_state_controller:

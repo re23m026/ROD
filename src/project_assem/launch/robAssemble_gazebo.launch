@@ -18,5 +18,5 @@
     output="screen"/>
   
   <node name="controller_spawner_robAssem" pkg="controller_manager" type="spawner" respawn="false" output="screen"
-        args="--namespace=/robAssemble Joint1_position_controller Joint2_position_controller Joint3_position_controller Joint4_position_controller joint_state_controller" />
+        args="--namespace=/robAssemble Joint1_position_controller Joint2_position_controller Joint3_position_controller Joint4_position_controller Joint5_position_controller Endeffektor_Joint_position_controller joint_state_controller" />
 </launch>
