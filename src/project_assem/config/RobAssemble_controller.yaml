@@ -20,6 +20,16 @@ robAssemble:
     joint: Joint4
     pid: {p: 50.0, i: 0.01, d: 1.0}
 
+  Joint5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Joint5
+    pid: {p: 50.0, i: 0.01, d: 1.0}
+
+  Endeffektor_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Endeffektor_Joint
+    pid: {p: 50.0, i: 0.01, d: 1.0}
+
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
