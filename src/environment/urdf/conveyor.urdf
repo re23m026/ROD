@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot name="conveyor">
+  
+  <link name="world"/>
+
+  <joint name="conveyor_to_world" type="floating">
+    <parent link="world"/>
+    <child link="conveyor_link"/>
+    <origin xyz="-2 -2 0.1" rpy="0 0 0"/>
+  </joint>
+  
+  
+  <link name="conveyor_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass
+        value="3.53662299561806" />
+      <inertia
+        ixx="1.44170280193578"
+        ixy="1.49433778430058E-16"
+        ixz="4.6259292692713E-19"
+        iyy="0.0504799998691329"
+        iyz="8.7868735709312E-17"
+        izz="1.48553274861646" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://environment/meshes/conveyor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://environment/meshes/conveyor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+    <!-- Namespace für Gazebo-Plugins -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/conveyor</robotNamespace> 
+    </plugin>
+
+    <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+      <robotNamespace>/conveyor</robotNamespace>
+      <bodyName>conveyor_link</bodyName>
+      <frameName>world</frameName>
+      <updateRate>50.0</updateRate>
+      <topicName>/conveyor/tf</topicName> 
+    </plugin>
+  </gazebo>
+
+</robot>

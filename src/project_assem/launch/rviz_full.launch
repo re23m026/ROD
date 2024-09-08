@@ -4,6 +4,7 @@
   <param name="/robAssemble/robot_description" command="cat $(find project_assem)/urdf/RobAssemble.urdf" />
   <param name="/robshift/robot_description" command="cat $(find project_model)/urdf/RobShift.urdf" />
   <param name="/europalette/robot_description" command="cat $(find environment)/urdf/Europalette.urdf" /> <!-- Only in RViz -->
+  <param name="/conveyor/robot_description" command="cat $(find environment)/urdf/conveyor.urdf" /> <!-- Only in RViz -->
 
   <node
     name="rviz"
@@ -46,6 +47,16 @@
     output="screen">
     <param name="publish_frequency" type="double" value="50.0" />
     <param name="tf_prefix" value="europalette" />
+  </node>
+
+  <node
+    ns="conveyor"
+    name="conveyor_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher"
+    output="screen">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" value="conveyor" />
   </node>
 
 

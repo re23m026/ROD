@@ -1,0 +1,8 @@
+prefix=/home/fhtw_user/catkin_ws/src/fhtw/ROD/devel
+
+Name: conveyor
+Description: Description of conveyor
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
