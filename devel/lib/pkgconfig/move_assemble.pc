@@ -1,0 +1,8 @@
+prefix=/home/fhtw_user/catkin_ws/src/fhtw/ROD/devel
+
+Name: move_assemble
+Description: Description of move_assemble
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
