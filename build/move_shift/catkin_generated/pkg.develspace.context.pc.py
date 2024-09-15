@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "move_shift"
-PROJECT_SPACE_DIR = "/home/fhtw_user/catkin_ws/src/fhtw/ROD/devel"
+PROJECT_SPACE_DIR = "/home/steve/Desktop/ROD/devel"
 PROJECT_VERSION = "0.3.0"

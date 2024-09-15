@@ -1,8 +1,8 @@
-# Install script for directory: /home/fhtw_user/catkin_ws/src/fhtw/ROD/src/move_assemble
+# Install script for directory: /home/steve/Desktop/ROD/src/move_assemble
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fhtw_user/catkin_ws/src/fhtw/ROD/install")
+  set(CMAKE_INSTALL_PREFIX "/home/steve/Desktop/ROD/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/move_assemble/catkin_generated/installspace/move_assemble.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/steve/Desktop/ROD/build/move_assemble/catkin_generated/installspace/move_assemble.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/move_assemble/cmake" TYPE FILE FILES
-    "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/move_assemble/catkin_generated/installspace/move_assembleConfig.cmake"
-    "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/move_assemble/catkin_generated/installspace/move_assembleConfig-version.cmake"
+    "/home/steve/Desktop/ROD/build/move_assemble/catkin_generated/installspace/move_assembleConfig.cmake"
+    "/home/steve/Desktop/ROD/build/move_assemble/catkin_generated/installspace/move_assembleConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/move_assemble" TYPE FILE FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/move_assemble/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/move_assemble" TYPE FILE FILES "/home/steve/Desktop/ROD/src/move_assemble/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/move_assemble" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/move_assemble/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/move_assemble" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/move_assemble/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/move_assemble" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/move_assemble/config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/move_assemble" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/move_assemble/config")
 endif()
 
