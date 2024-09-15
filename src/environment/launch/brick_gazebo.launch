@@ -1,0 +1,15 @@
+<launch>
+
+  <param name="/brick/robot_description" command="cat $(find environment)/urdf/brick.urdf" />
+
+  <node
+    name="spawn_brick"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-param /brick/robot_description -urdf -model brick -x 0 -y 0 -z 1.0"
+    output="screen"/>
+    
+    <node name="multi_brick_spawner" pkg="environment" type="spawner_bricks.py" output="screen" />
+
+
+</launch>

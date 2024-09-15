@@ -1,0 +1,28 @@
+<launch>
+
+  <param name="/conveyor/robot_description" command="cat $(find environment)/urdf/conveyor.urdf" />
+  <!--rosparam file="$(find environment)/config/belt_controller.yaml" command="load"/-->
+
+  <node
+    pkg="tf2_ros"
+    type="static_transform_publisher"
+    name="static_transform_publisher_conveyor_to_world"
+    args="0 0 0 0 0 0 world conveyor/world" />
+
+      <node
+    pkg="tf2_ros"
+    type="static_transform_publisher"
+    name="static_transform_publisher_beltmoving_beltvisual"
+    args="0 0 0 0 0 0 conveyor/belt_visual conveyor/belt_moving" />
+
+		<node
+      name="spawn_model_belt"
+      pkg="gazebo_ros"
+      type="spawn_model"
+      args="-param /conveyor/robot_description -urdf -model conveyor_belt"
+      respawn="false"
+      output="screen" />
+
+
+
+</launch>

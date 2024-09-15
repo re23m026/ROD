@@ -6,6 +6,7 @@
 
 <robot name="europalette">
 
+
   <link name="base_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -29,7 +30,6 @@
     </collision>
   </link>
 
-  <!-- Namespace für Gazebo-Plugins -->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/europalette</robotNamespace> 

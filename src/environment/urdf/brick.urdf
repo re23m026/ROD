@@ -5,13 +5,6 @@
 <robot
   name="brick">
 
-  <link name="world"/>
-  <joint name="brick_to_world" type="floating">
-    <parent link="world"/>
-    <child link="brick"/>
-    <origin xyz="-2 -2 3" rpy="0 0 0"/>
-  </joint>
-
   <link
     name="brick">
     <inertial>
@@ -19,7 +12,7 @@
         xyz="-0.0504931185552664 -0.0121385028318173 0.034891250158239"
         rpy="0 0 0" />
       <mass
-        value="9.7387642147252" />
+        value="6" />
       <inertia
         ixx="0.0725479577844421"
         ixy="1.25978871431953E-18"
@@ -52,18 +45,5 @@
       </geometry>
     </collision>
   </link>
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/brick</robotNamespace> 
-    </plugin>
-
-    <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
-      <robotNamespace>/brick</robotNamespace>
-      <bodyName>brick</bodyName>
-      <frameName>world</frameName>
-      <updateRate>50.0</updateRate>
-      <topicName>/brick/tf</topicName> 
-    </plugin>
-  </gazebo>
 
 </robot>
