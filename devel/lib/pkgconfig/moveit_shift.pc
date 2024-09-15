@@ -1,4 +1,4 @@
-prefix=/home/fhtw_user/catkin_ws/src/fhtw/ROD/devel
+prefix=/home/steve/Desktop/ROD/devel
 
 Name: moveit_shift
 Description: Description of moveit_shift

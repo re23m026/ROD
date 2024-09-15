@@ -1,8 +1,8 @@
-# Install script for directory: /home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_assem
+# Install script for directory: /home/steve/Desktop/ROD/src/moveit_assem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fhtw_user/catkin_ws/src/fhtw/ROD/install")
+  set(CMAKE_INSTALL_PREFIX "/home/steve/Desktop/ROD/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/moveit_assem/catkin_generated/installspace/moveit_assem.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/steve/Desktop/ROD/build/moveit_assem/catkin_generated/installspace/moveit_assem.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_assem/cmake" TYPE FILE FILES
-    "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/moveit_assem/catkin_generated/installspace/moveit_assemConfig.cmake"
-    "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/moveit_assem/catkin_generated/installspace/moveit_assemConfig-version.cmake"
+    "/home/steve/Desktop/ROD/build/moveit_assem/catkin_generated/installspace/moveit_assemConfig.cmake"
+    "/home/steve/Desktop/ROD/build/moveit_assem/catkin_generated/installspace/moveit_assemConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_assem" TYPE FILE FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_assem/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_assem" TYPE FILE FILES "/home/steve/Desktop/ROD/src/moveit_assem/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_assem" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_assem/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_assem" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/moveit_assem/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_assem" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_assem/config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_assem" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/moveit_assem/config")
 endif()
 

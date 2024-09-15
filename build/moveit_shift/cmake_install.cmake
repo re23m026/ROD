@@ -1,8 +1,8 @@
-# Install script for directory: /home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_shift
+# Install script for directory: /home/steve/Desktop/ROD/src/moveit_shift
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fhtw_user/catkin_ws/src/fhtw/ROD/install")
+  set(CMAKE_INSTALL_PREFIX "/home/steve/Desktop/ROD/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/moveit_shift/catkin_generated/installspace/moveit_shift.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/steve/Desktop/ROD/build/moveit_shift/catkin_generated/installspace/moveit_shift.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_shift/cmake" TYPE FILE FILES
-    "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/moveit_shift/catkin_generated/installspace/moveit_shiftConfig.cmake"
-    "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/moveit_shift/catkin_generated/installspace/moveit_shiftConfig-version.cmake"
+    "/home/steve/Desktop/ROD/build/moveit_shift/catkin_generated/installspace/moveit_shiftConfig.cmake"
+    "/home/steve/Desktop/ROD/build/moveit_shift/catkin_generated/installspace/moveit_shiftConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_shift" TYPE FILE FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_shift/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_shift" TYPE FILE FILES "/home/steve/Desktop/ROD/src/moveit_shift/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_shift" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_shift/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_shift" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/moveit_shift/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_shift" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/moveit_shift/config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_shift" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/moveit_shift/config")
 endif()
 

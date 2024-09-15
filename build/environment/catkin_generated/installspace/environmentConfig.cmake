@@ -67,14 +67,14 @@ set(environment_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(environment_SOURCE_PREFIX /home/fhtw_user/catkin_ws/src/fhtw/ROD/src/environment)
-  set(environment_DEVEL_PREFIX /home/fhtw_user/catkin_ws/src/fhtw/ROD/devel)
+  set(environment_SOURCE_PREFIX /home/steve/Desktop/ROD/src/environment)
+  set(environment_DEVEL_PREFIX /home/steve/Desktop/ROD/devel)
   set(environment_INSTALL_PREFIX "")
   set(environment_PREFIX ${environment_DEVEL_PREFIX})
 else()
   set(environment_SOURCE_PREFIX "")
   set(environment_DEVEL_PREFIX "")
-  set(environment_INSTALL_PREFIX /home/fhtw_user/catkin_ws/src/fhtw/ROD/install)
+  set(environment_INSTALL_PREFIX /home/steve/Desktop/ROD/install)
   set(environment_PREFIX ${environment_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/fhtw_user/catkin_ws/src/fhtw/ROD/install/lib;/home/fhtw_user/catkin_ws/src/fhtw/ROD/devel/lib;/home/fhtw_user/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/steve/Desktop/ROD/install/lib;/home/steve/Desktop/ROD/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

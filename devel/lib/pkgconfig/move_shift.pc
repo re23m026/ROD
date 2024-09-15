@@ -1,4 +1,4 @@
-prefix=/home/fhtw_user/catkin_ws/src/fhtw/ROD/devel
+prefix=/home/steve/Desktop/ROD/devel
 
 Name: move_shift
 Description: Description of move_shift

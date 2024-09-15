@@ -1,8 +1,8 @@
-# Install script for directory: /home/fhtw_user/catkin_ws/src/fhtw/ROD/src/project_assem
+# Install script for directory: /home/steve/Desktop/ROD/src/project_assem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/fhtw_user/catkin_ws/src/fhtw/ROD/install")
+  set(CMAKE_INSTALL_PREFIX "/home/steve/Desktop/ROD/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,33 +38,33 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/project_assem/catkin_generated/installspace/project_assem.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/steve/Desktop/ROD/build/project_assem/catkin_generated/installspace/project_assem.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/cmake" TYPE FILE FILES
-    "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/project_assem/catkin_generated/installspace/project_assemConfig.cmake"
-    "/home/fhtw_user/catkin_ws/src/fhtw/ROD/build/project_assem/catkin_generated/installspace/project_assemConfig-version.cmake"
+    "/home/steve/Desktop/ROD/build/project_assem/catkin_generated/installspace/project_assemConfig.cmake"
+    "/home/steve/Desktop/ROD/build/project_assem/catkin_generated/installspace/project_assemConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem" TYPE FILE FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/project_assem/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem" TYPE FILE FILES "/home/steve/Desktop/ROD/src/project_assem/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/config" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/project_assem/config/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/config" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/project_assem/config/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/launch" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/project_assem/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/launch" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/project_assem/launch/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/meshes" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/project_assem/meshes/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/meshes" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/project_assem/meshes/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/urdf" TYPE DIRECTORY FILES "/home/fhtw_user/catkin_ws/src/fhtw/ROD/src/project_assem/urdf/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/project_assem/urdf" TYPE DIRECTORY FILES "/home/steve/Desktop/ROD/src/project_assem/urdf/")
 endif()
 
