@@ -6,7 +6,7 @@ import moveit_commander
 import geometry_msgs
 import moveit_msgs.msg
 
-def move_robot():
+def move_shift():
     
     # Initialisierung
     moveit_commander.roscpp_initialize(sys.argv)
@@ -17,7 +17,7 @@ def move_robot():
     scene = moveit_commander.PlanningSceneInterface()
 
     # Ersetze 'arm' durch den Namen der Move-Gruppe des Roboters
-    group_name = "moveit_assem"
+    group_name = "moveit_shift"
     move_group = moveit_commander.MoveGroupCommander(group_name)
     # move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
 
@@ -78,9 +78,6 @@ def move_robot():
 
 
 
-
-
-
     # Ziele löschen
     move_group.stop()
     move_group.clear_pose_targets()
@@ -90,6 +87,6 @@ def move_robot():
 
 if __name__ == '__main__':
     try:
-        move_robot()
+        move_shift()
     except rospy.ROSInterruptException:
         pass
