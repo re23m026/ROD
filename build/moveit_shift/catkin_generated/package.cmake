@@ -11,6 +11,6 @@ set(moveit_shift_RUN_DEPENDS "moveit_ros_move_group" "moveit_fake_controller_man
 set(moveit_shift_TEST_DEPENDS )
 set(moveit_shift_DOC_DEPENDS )
 set(moveit_shift_URL_WEBSITE "http://moveit.ros.org/")
-set(moveit_shift_URL_BUGTRACKER "https://github.com/ros-planning/moveit/issues")
-set(moveit_shift_URL_REPOSITORY "https://github.com/ros-planning/moveit")
+set(moveit_shift_URL_BUGTRACKER "https://github.com/moveit/moveit/issues")
+set(moveit_shift_URL_REPOSITORY "https://github.com/moveit/moveit")
 set(moveit_shift_DEPRECATED "")

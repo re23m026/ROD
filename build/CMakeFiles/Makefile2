@@ -57,6 +57,7 @@ all: gtest/all
 all: move_assemble/all
 all: move_shift/all
 all: moveit_assem/all
+all: moveit_model/all
 all: moveit_shift/all
 all: moveit_test/all
 all: environment/all
@@ -70,6 +71,7 @@ preinstall: gtest/preinstall
 preinstall: move_assemble/preinstall
 preinstall: move_shift/preinstall
 preinstall: moveit_assem/preinstall
+preinstall: moveit_model/preinstall
 preinstall: moveit_shift/preinstall
 preinstall: moveit_test/preinstall
 preinstall: environment/preinstall
@@ -88,6 +90,7 @@ clean: gtest/clean
 clean: move_assemble/clean
 clean: move_shift/clean
 clean: moveit_assem/clean
+clean: moveit_model/clean
 clean: moveit_shift/clean
 clean: moveit_test/clean
 clean: environment/clean
@@ -224,6 +227,24 @@ moveit_assem/preinstall:
 moveit_assem/clean:
 
 .PHONY : moveit_assem/clean
+
+#=============================================================================
+# Directory level rules for directory moveit_model
+
+# Recursive "all" directory target.
+moveit_model/all:
+
+.PHONY : moveit_model/all
+
+# Recursive "preinstall" directory target.
+moveit_model/preinstall:
+
+.PHONY : moveit_model/preinstall
+
+# Recursive "clean" directory target.
+moveit_model/clean:
+
+.PHONY : moveit_model/clean
 
 #=============================================================================
 # Directory level rules for directory moveit_shift

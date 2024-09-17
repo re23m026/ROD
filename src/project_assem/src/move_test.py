@@ -15,7 +15,7 @@ def move_robot():
     # Initialisiere den RobotCommander und MoveGroupCommander
     robot = moveit_commander.RobotCommander()
     scene = moveit_commander.PlanningSceneInterface()
-    group_name = "moveit_assem"  # Ersetzen Sie 'moveit_assem' durch den tatsächlichen Gruppenamen
+    group_name = "moveit_shift"  # Ersetzen Sie 'moveit_assem' durch den tatsächlichen Gruppenamen
     move_group = moveit_commander.MoveGroupCommander(group_name)
     move_group.set_max_velocity_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Geschwindigkeit (100%)
     move_group.set_max_acceleration_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Beschleunigung (100%)
@@ -29,12 +29,12 @@ def move_robot():
     )
 
     # Box hinzufügen
-    add_object(scene, 2.0, 2.2, 0.3, "box_1")
-    add_object(scene, 2.0, 2.4, 0.3, "box_2")
-    add_object(scene, 2.0, 2.6, 0.3, "box_3")
-    add_object(scene, 2.5, 2.2, 0.3, "box_4")
-    add_object(scene, 2.5, 2.4, 0.3, "box_5")
-    add_object(scene, 2.5, 2.6, 0.3, "box_6")
+    add_object(scene, 2.0, 2.2, 0.2, "box_1")
+    add_object(scene, 2.0, 2.4, 0.2, "box_2")
+    add_object(scene, 2.0, 2.6, 0.2, "box_3")
+    add_object(scene, 2.5, 2.2, 0.2, "box_4")
+    add_object(scene, 2.5, 2.4, 0.2, "box_5")
+    add_object(scene, 2.5, 2.6, 0.2, "box_6")
 
 
     # Zielpose für "Pick" definieren
@@ -47,7 +47,9 @@ def move_robot():
     pick_pose.orientation.z = 0.788958
     pick_pose.orientation.w = -0.236627  # Identitätsrotation
     move_group.set_pose_target(pick_pose)
-
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    move_group.set_max_velocity_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Geschwindigkeit (100%)
+    move_group.set_max_acceleration_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Beschleunigung (100%)
 
     # Bewegung zum Pick-Punkt planen und ausführen
     move_group.go(wait=True)
@@ -96,7 +98,9 @@ def move_robot():
     pick_pose.orientation.z = 0.788958
     pick_pose.orientation.w = -0.236627  # Identitätsrotation
     move_group.set_pose_target(pick_pose)
-
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    move_group.set_max_velocity_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Geschwindigkeit (100%)
+    move_group.set_max_acceleration_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Beschleunigung (100%)
 
     # Bewegung zum Pick-Punkt planen und ausführen
     move_group.go(wait=True)

@@ -266,7 +266,7 @@
     </joint>
     <joint
         name="Joint_Vakuumgreifer"
-        type="continuous">
+        type="revolute">
         <origin
         xyz="0.28437 0.0023885 0.0039722"
         rpy="2.4444 -0.63915 0.46331" />
@@ -276,6 +276,8 @@
         link="Vakuumgreifer" />
         <axis
         xyz="0 1 0" />
+        <limit lower="-3" upper="3" effort="100.0" velocity="0.1" />
+        <dynamics damping="0.1" friction="0.2" />
     </joint>
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">

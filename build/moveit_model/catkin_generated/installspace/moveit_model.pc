@@ -1,0 +1,8 @@
+prefix=/home/steve/Desktop/ROD/install
+
+Name: moveit_model
+Description: Description of moveit_model
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
