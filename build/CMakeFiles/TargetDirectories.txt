@@ -64,6 +64,13 @@
 /home/steve/Desktop/ROD/build/moveit_shift/CMakeFiles/rebuild_cache.dir
 /home/steve/Desktop/ROD/build/moveit_shift/CMakeFiles/edit_cache.dir
 /home/steve/Desktop/ROD/build/moveit_shift/CMakeFiles/test.dir
+/home/steve/Desktop/ROD/build/moveit_test/CMakeFiles/install/strip.dir
+/home/steve/Desktop/ROD/build/moveit_test/CMakeFiles/install/local.dir
+/home/steve/Desktop/ROD/build/moveit_test/CMakeFiles/install.dir
+/home/steve/Desktop/ROD/build/moveit_test/CMakeFiles/list_install_components.dir
+/home/steve/Desktop/ROD/build/moveit_test/CMakeFiles/rebuild_cache.dir
+/home/steve/Desktop/ROD/build/moveit_test/CMakeFiles/edit_cache.dir
+/home/steve/Desktop/ROD/build/moveit_test/CMakeFiles/test.dir
 /home/steve/Desktop/ROD/build/environment/CMakeFiles/install/strip.dir
 /home/steve/Desktop/ROD/build/environment/CMakeFiles/install/local.dir
 /home/steve/Desktop/ROD/build/environment/CMakeFiles/install.dir

@@ -1,2 +1,2 @@
-environment:move_assemble:move_shift:moveit_assem:moveit_shift:project_assem:project_model
+environment:move_assemble:move_shift:moveit_assem:moveit_shift:moveit_test:project_assem:project_model
 -DCATKIN_DEVEL_PREFIX=/home/steve/Desktop/ROD/devel -DCMAKE_INSTALL_PREFIX=/home/steve/Desktop/ROD/install -G Unix Makefiles

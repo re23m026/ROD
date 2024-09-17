@@ -32,60 +32,117 @@ def move_robot():
     add_object(scene, 2.0, 2.2, 0.3, "box_1")
     add_object(scene, 2.0, 2.4, 0.3, "box_2")
     add_object(scene, 2.0, 2.6, 0.3, "box_3")
-    add_object(scene, 3.0, 2.2, 0.3, "box_4")
-    add_object(scene, 3.0, 2.4, 0.3, "box_5")
-    add_object(scene, 2.0, 2.6, 0.3, "box_6")
+    add_object(scene, 2.5, 2.2, 0.3, "box_4")
+    add_object(scene, 2.5, 2.4, 0.3, "box_5")
+    add_object(scene, 2.5, 2.6, 0.3, "box_6")
 
 
     # Zielpose für "Pick" definieren
     pick_pose = geometry_msgs.msg.Pose()
-    pick_pose.orientation.w = 1.0
-    pick_pose.position.x = 2.2
-    pick_pose.position.y = 2.1
-    pick_pose.position.z = 1.0
+    pick_pose.position.x = 1.66724
+    pick_pose.position.y = 1.45306
+    pick_pose.position.z = 1.02651
+    pick_pose.orientation.x = 0.484666
+    pick_pose.orientation.y = 0.294367
+    pick_pose.orientation.z = 0.788958
+    pick_pose.orientation.w = -0.236627  # Identitätsrotation
     move_group.set_pose_target(pick_pose)
+
 
     # Bewegung zum Pick-Punkt planen und ausführen
     move_group.go(wait=True)
     move_group.stop()
     move_group.clear_pose_targets()
     print("reached Pick Position")
+    rospy.sleep(2)
 
     # Objekt greifen (Attach)
-    grasp_object(robot, move_group, scene)
+    grasp_object(robot, move_group, scene, "box_1")
 
     print("grasped object")
 
     # Zielpose für "Place" definieren
     place_pose = geometry_msgs.msg.Pose()
-    place_pose.orientation.w = 1.0
-    place_pose.position.x = 0.0
-    place_pose.position.y = 0.2
-    place_pose.position.z = 1.0
+    place_pose.orientation.x = 0.21342
+    place_pose.orientation.y = -0.085426
+    place_pose.orientation.z = 0.969578
+    place_pose.orientation.w = - 0.0841017  # Identitätsrotation
+    place_pose.position.x = 1.17315
+    place_pose.position.y = 1.93462
+    place_pose.position.z = 0.43608
     move_group.set_pose_target(place_pose)
     move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
-
+    move_group.set_max_velocity_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Geschwindigkeit (100%)
+    move_group.set_max_acceleration_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Beschleunigung (100%)
+    
     # Bewegung zum Place-Punkt planen und ausführen
     move_group.go(wait=True)
     move_group.stop()
     move_group.clear_pose_targets()
     print("Reached Place Position")
+    rospy.sleep(2)
 
     # Objekt ablegen (Detach)
-    release_object(move_group, scene)
+    release_object(move_group, scene, "box_1")
+    print("Object released")
+
+    # Zielpose für "Pick" definieren
+    pick_pose = geometry_msgs.msg.Pose()
+    pick_pose.position.x = 1.66724
+    pick_pose.position.y = 1.45306
+    pick_pose.position.z = 1.02651
+    pick_pose.orientation.x = 0.484666
+    pick_pose.orientation.y = 0.294367
+    pick_pose.orientation.z = 0.788958
+    pick_pose.orientation.w = -0.236627  # Identitätsrotation
+    move_group.set_pose_target(pick_pose)
+
+
+    # Bewegung zum Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    print("reached Pick Position")
+    rospy.sleep(2)
+
+    grasp_object(robot, move_group, scene, "box_2")
+
+   # Zielpose für "Place" definieren
+    place_pose = geometry_msgs.msg.Pose()
+    place_pose.orientation.x = 0.21342
+    place_pose.orientation.y = -0.085426
+    place_pose.orientation.z = 0.969578
+    place_pose.orientation.w = - 0.0841017  # Identitätsrotation
+    place_pose.position.x = 1.17315
+    place_pose.position.y = 1.93462
+    place_pose.position.z = 0.43608
+    move_group.set_pose_target(place_pose)
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    move_group.set_max_velocity_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Geschwindigkeit (100%)
+    move_group.set_max_acceleration_scaling_factor(1.0)  # Setzen Sie 1.0 für maximale Beschleunigung (100%)
+    
+    # Bewegung zum Place-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    print("Reached Place Position")
+    rospy.sleep(2)
+
+    # Objekt ablegen (Detach)
+    release_object(move_group, scene, "box_2")
     print("Object released")
 
     # Herunterfahren
     moveit_commander.roscpp_shutdown()
 
-def grasp_object(robot, move_group, scene):
+def grasp_object(robot, move_group, scene, name):
     # Fügen Sie hier den Code hinzu, um das Objekt an das Werkzeug zu "attachen"
     # Zum Beispiel eine Box als Platzhalter für das Objekt hinzufügen und anhängen
-    box_name = "object"
+    box_name = name
     box_pose = geometry_msgs.msg.PoseStamped()
     box_pose.header.frame_id = move_group.get_end_effector_link()
     box_pose.pose.orientation.w = 1.0
-    box_pose.pose.position.z = 0.1  # Höhe relativ zum Endeffektor
+    box_pose.pose.position.z = -0.1  # Höhe relativ zum Endeffektor
     scene.add_box(box_name, box_pose, size=(0.2, 0.2, 0.2))
 
     # Warten, bis die Box in der Szene hinzugefügt wurde
@@ -118,16 +175,19 @@ def add_object(scene, x, y, z, name):
     # # Warten, bis das Objekt angehängt wurde
 
 
-def release_object(move_group, scene):
+def release_object(move_group, scene, name):
     # Objekt vom Werkzeug "detachen"
-    box_name = "object"
+    box_name = name
+
+    # Box zu World attachen
+
     scene.remove_attached_object(move_group.get_end_effector_link(), name=box_name)
 
     # Warten, bis die Box entfernt wurde
     rospy.sleep(1)
 
     # Box aus der Szene löschen
-    scene.remove_world_object(box_name)
+    # scene.remove_world_object(box_name)
 
 if __name__ == '__main__':
     try:

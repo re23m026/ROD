@@ -236,7 +236,7 @@
   </link>
   <joint
     name="Joint4"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.75 -0.093 0"
       rpy="0 -1.5708 3.14159" />
@@ -294,7 +294,7 @@
   </link>
   <joint
     name="Joint5"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.00008 -0.00005 0.2068"
       rpy="0 0 0" />
