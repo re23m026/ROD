@@ -5,7 +5,40 @@ import rospy
 import moveit_commander
 import geometry_msgs.msg
 import moveit_msgs.msg
+from moveit_commander import PlanningSceneInterface
+from moveit_msgs.msg import CollisionObject
+from shape_msgs.msg import SolidPrimitive
+from std_msgs.msg import Header
 from std_msgs.msg import String
+import rospkg
+import os
+
+def add_urdf_object_to_scene(scene, urdf_file_path, object_name, position, orientation):
+    
+    
+    # Lesen Sie die URDF-Datei als String ein
+    with open(urdf_file_path, 'r') as urdf_file:
+        urdf_content = urdf_file.read()
+
+    # Definieren Sie die Position und Orientierung des Objekts
+    pose = geometry_msgs.msg.PoseStamped()
+    pose.header.frame_id = "world"
+    pose.pose.position.x = position[0]
+    pose.pose.position.y = position[1]
+    pose.pose.position.z = position[2]
+    pose.pose.orientation.x = orientation[0]
+    pose.pose.orientation.y = orientation[1]
+    pose.pose.orientation.z = orientation[2]
+    pose.pose.orientation.w = orientation[3]
+
+    # Objekt als URDF zur Szene hinzufügen
+    scene.add_mesh(object_name, pose, urdf_file_path)
+
+    # Warten, bis die Szene aktualisiert wird
+    rospy.sleep(1)
+
+
+
 
 def move_robot():
     # Initialisierung
@@ -15,20 +48,31 @@ def move_robot():
     # Initialisiere den RobotCommander und MoveGroupCommander
     robot = moveit_commander.RobotCommander()
     scene = moveit_commander.PlanningSceneInterface()
-    group_name = "moveit_shift"  # Ersetzen Sie 'moveit_assem' durch den tatsächlichen Gruppenamen
+    group_name = "moveit_shift"  
     move_group = moveit_commander.MoveGroupCommander(group_name)
     
+    # URDF zur Europalette
+    urdf_file_path = "/home/steve/Desktop/ROD/src/environment/urdf/europalette.urdf"
+
+    # Position und Orientierung (x, y, z) und Quaternion (x, y, z, w)
+    position = [1.0, 0.5, 0.1]
+    orientation = [0.0, 0.0, 0.0, 1.0]
+
+    # Objekt aus URDF-Datei hinzufügen
+    add_urdf_object_to_scene(scene, urdf_file_path, "europalette", position, orientation)
+
+
     # Geschwindigkeit setzen
     move_group.set_max_velocity_scaling_factor(1.0)  
     move_group.set_max_acceleration_scaling_factor(1.0)  
     
     # Box hinzufügen
-    add_object(scene, -0.854457, 0.43213, 0.3, "box_1")
-    add_object(scene, -0.854457, 0.43213+0.4, 0.3, "box_2")
-    add_object(scene, -0.854457, 0.43213+0.8, 0.3, "box_3")
-    add_object(scene, -0.854457-0.3, 0.43213, 0.3, "box_4")
-    add_object(scene, -0.854457-0.3, 0.43213+0.4, 0.3, "box_5")
-    add_object(scene, -0.854457-0.3, 0.43213+0.8, 0.3, "box_6")
+    add_object(scene, -0.854457, 0.43213, 0.35, "box_1")
+    add_object(scene, -0.854457, 0.43213+0.3, 0.35, "box_2")
+    add_object(scene, -0.854457, 0.43213+0.6, 0.35, "box_3")
+    add_object(scene, -0.854457-0.3, 0.43213, 0.35, "box_4")
+    add_object(scene, -0.854457-0.3, 0.43213+0.3, 0.35, "box_5")
+    add_object(scene, -0.854457-0.3, 0.43213+0.6, 0.35, "box_6")
 
 
     # Zielpose für "Pick" definieren

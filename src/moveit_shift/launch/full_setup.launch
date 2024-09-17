@@ -1,0 +1,21 @@
+<launch>
+  <!-- Load the main robot (project_model) -->
+  <include file="$(find moveit_shift)/launch/demo.launch"/>
+
+  <!-- Load additional objects -->
+  <!-- Load the Europalette -->
+  <node name="europalette_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <param name="robot_description" textfile="$(find environment)/urdf/europalette.urdf" />
+  </node>
+
+  <!-- Load the Conveyor -->
+  <node name="conveyor_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <param name="robot_description" textfile="$(find environment)/urdf/conveyor.urdf" />
+  </node>
+
+  <!-- Load the second robot (from project_assem) -->
+  <include file="$(find moveit_assem)/launch/demo.launch"/>
+
+  <!-- RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find moveit_shift)/launch/moveit.rviz" required="true" />
+</launch>

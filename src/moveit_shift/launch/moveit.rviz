@@ -5,6 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /MotionPlanning1
+        - /MotionPlanning2
+
       Splitter Ratio: 0.5
     Tree Height: 226
   - Class: rviz/Help
