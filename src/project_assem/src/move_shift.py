@@ -12,29 +12,31 @@ from std_msgs.msg import Header
 from std_msgs.msg import String
 import rospkg
 import os
+from tf.transformations import quaternion_from_euler
 
-def add_urdf_object_to_scene(scene, urdf_file_path, object_name, position, orientation):
+def add_mesh_object(scene, x, y, z, roll, pitch, yaw, name, mesh_path):
     
-    
-    # Lesen Sie die URDF-Datei als String ein
-    with open(urdf_file_path, 'r') as urdf_file:
-        urdf_content = urdf_file.read()
+    # Definiere den Namen des Objekts
+    mesh_name = name
 
-    # Definieren Sie die Position und Orientierung des Objekts
-    pose = geometry_msgs.msg.PoseStamped()
-    pose.header.frame_id = "world"
-    pose.pose.position.x = position[0]
-    pose.pose.position.y = position[1]
-    pose.pose.position.z = position[2]
-    pose.pose.orientation.x = orientation[0]
-    pose.pose.orientation.y = orientation[1]
-    pose.pose.orientation.z = orientation[2]
-    pose.pose.orientation.w = orientation[3]
+    # Position des Objekts in der Welt (angepasst an die tatsächliche Position in Ihrer Simulation)
+    mesh_pose = geometry_msgs.msg.PoseStamped()
+    mesh_pose.header.frame_id = "world"  # Oder ein anderer Referenzrahmen, z.B. das Förderband
+    mesh_pose.pose.position.x = x  # Setzen Sie die tatsächlichen Koordinaten des Objekts
+    mesh_pose.pose.position.y = y
+    mesh_pose.pose.position.z = z  # Höhe über dem Boden oder dem Förderband
 
-    # Objekt als URDF zur Szene hinzufügen
-    scene.add_mesh(object_name, pose, urdf_file_path)
+    # Setze die Orientierung mithilfe von Roll, Pitch, Yaw (in Radiant)
+    q = quaternion_from_euler(roll, pitch, yaw)
+    mesh_pose.pose.orientation.x = q[0]
+    mesh_pose.pose.orientation.y = q[1]
+    mesh_pose.pose.orientation.z = q[2]
+    mesh_pose.pose.orientation.w = q[3]
 
-    # Warten, bis die Szene aktualisiert wird
+    # Mesh zur Szene hinzufügen
+    scene.add_mesh(mesh_name, mesh_pose, mesh_path)
+
+    # Warten, bis das Mesh in der Szene hinzugefügt wurde
     rospy.sleep(1)
 
 
@@ -51,21 +53,32 @@ def move_robot():
     group_name = "moveit_shift"  
     move_group = moveit_commander.MoveGroupCommander(group_name)
     
-    # URDF zur Europalette
-    urdf_file_path = "/home/steve/Desktop/ROD/src/environment/urdf/europalette.urdf"
-
-    # Position und Orientierung (x, y, z) und Quaternion (x, y, z, w)
-    position = [1.0, 0.5, 0.1]
-    orientation = [0.0, 0.0, 0.0, 1.0]
-
-    # Objekt aus URDF-Datei hinzufügen
-    add_urdf_object_to_scene(scene, urdf_file_path, "europalette", position, orientation)
-
-
     # Geschwindigkeit setzen
     move_group.set_max_velocity_scaling_factor(1.0)  
     move_group.set_max_acceleration_scaling_factor(1.0)  
     
+    # Euro-Palette hinzufügen
+    rospack = rospkg.RosPack()
+    mesh_file_path = os.path.join(rospack.get_path('environment'), 'meshes', 'europalette', 'Europoolpalette_scaled.stl')
+    
+    # Position (x, y, z) und Orientierung (roll, pitch, yaw in Radiant)
+    add_mesh_object(scene, -0.854457-0.15, 0.43213+0.3, 0.1, 0.0, 0.0, 1.57, "europalette", mesh_file_path)  
+
+    # Conveyor
+    rospack = rospkg.RosPack()
+    mesh_file_path = os.path.join(rospack.get_path('environment'), 'meshes', 'conveyor', 'conveyor_simple.stl')
+    
+    # Position (x, y, z) und Orientierung (roll, pitch, yaw in Radiant)
+    add_mesh_object(scene, 1.0, 0.0, -0.5, 1.57, 0.0, 1.57, "conveyor_1", mesh_file_path)  
+    add_mesh_object(scene, 1.0, -1.0, -0.5, 1.57, 0.0, 1.57, "conveyor_2", mesh_file_path)  
+    add_mesh_object(scene, 1.0, -2.0, -0.5, 1.57, 0.0, 1.57, "conveyor_3", mesh_file_path) 
+    add_mesh_object(scene, 1.0, -3.0, -0.5, 1.57, 0.0, 1.57, "conveyor_4", mesh_file_path) 
+    add_mesh_object(scene, 1.4, 0.0, -0.5, 1.57, 0.0, 1.57, "conveyor_5", mesh_file_path)  
+    add_mesh_object(scene, 1.4, -1.0, -0.5, 1.57, 0.0, 1.57, "conveyor_6", mesh_file_path) 
+    add_mesh_object(scene, 1.4, -2.0, -0.5, 1.57, 0.0, 1.57, "conveyor_7", mesh_file_path) 
+    add_mesh_object(scene, 1.4, -3.0, -0.5, 1.57, 0.0, 1.57, "conveyor_8", mesh_file_path)  
+
+
     # Box hinzufügen
     add_object(scene, -0.854457, 0.43213, 0.35, "box_1")
     add_object(scene, -0.854457, 0.43213+0.3, 0.35, "box_2")
