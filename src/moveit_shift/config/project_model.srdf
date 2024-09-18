@@ -52,19 +52,68 @@
         <joint name="Joint4" value="0"/>
         <joint name="Joint_Vakuumgreifer" value="0"/>
     </group_state>
-    <group_state name="pick" group="moveit_shift">
+    <group_state name="pick_1" group="moveit_shift">
         <joint name="Joint1" value="3.1416"/>
         <joint name="Joint2" value="-0.6234"/>
         <joint name="Joint3" value="-0.5774"/>
         <joint name="Joint4" value="-0.6653"/>
         <joint name="Joint_Vakuumgreifer" value="0.4895"/>
     </group_state>
-    <group_state name="place" group="moveit_shift">
+    <group_state name="pick_2" group="moveit_shift">
+        <joint name="Joint1" value="2.7751757428436137"/>
+        <joint name="Joint2" value="-0.9097459229083615"/>
+        <joint name="Joint3" value="-0.4132959808217446"/>
+        <joint name="Joint4" value="-0.6288118220164528"/>
+        <joint name="Joint_Vakuumgreifer" value="0.6371479953316466"/>
+    </group_state>
+        <group_state name="pick_3" group="moveit_shift">
+        <joint name="Joint1" value="2.5961700082965193"/>
+        <joint name="Joint2" value="-0.9090560981158633"/>
+        <joint name="Joint3" value="-0.28532103176857343"/>
+        <joint name="Joint4" value="-0.6314647848169795"/>
+        <joint name="Joint_Vakuumgreifer" value="0.6369444741273274"/>
+    </group_state>
+    <group_state name="place_3" group="moveit_shift">
         <joint name="Joint1" value="-0.092"/>
         <joint name="Joint2" value="-0.6234"/>
         <joint name="Joint3" value="-0.5774"/>
         <joint name="Joint4" value="-0.6653"/>
         <joint name="Joint_Vakuumgreifer" value="0.4895"/>
+    </group_state>
+    <group_state name="place_6" group="moveit_shift">
+        <joint name="Joint1" value="-0.11441942422604189"/>
+        <joint name="Joint2" value="-0.40406331108047316"/>
+        <joint name="Joint3" value="-0.471114107202212"/>
+        <joint name="Joint4" value="-1.0343436375160089"/>
+        <joint name="Joint_Vakuumgreifer" value="0.6979247280363924"/>
+    </group_state>
+    <group_state name="place_2" group="moveit_shift">
+        <joint name="Joint1" value="-0.07964743975969032"/>
+        <joint name="Joint2" value="-0.8595362830653642"/>
+        <joint name="Joint3" value="-0.4047972988043965"/>
+        <joint name="Joint4" value="-0.6614808249033922"/>
+        <joint name="Joint_Vakuumgreifer" value="0.7090769372231109"/>
+    </group_state>
+    <group_state name="place_1" group="moveit_shift">
+        <joint name="Joint1" value="-0.07022364457659006"/>
+        <joint name="Joint2" value="-0.999797691636486"/>
+        <joint name="Joint3" value="-0.18062023200243468"/>
+        <joint name="Joint4" value="-0.5067398833108846"/>
+        <joint name="Joint_Vakuumgreifer" value="0.7105141452050836"/>
+    </group_state>
+    <group_state name="place_5" group="moveit_shift">
+        <joint name="Joint1" value="-0.1264353409088868"/>
+        <joint name="Joint2" value="-0.8333727653427031"/>
+        <joint name="Joint3" value="-0.13280030532180956"/>
+        <joint name="Joint4" value="-1.1702486474871183"/>
+        <joint name="Joint_Vakuumgreifer" value="0.9414685851999405"/>
+    </group_state>
+    <group_state name="place_4" group="moveit_shift">
+        <joint name="Joint1" value="-0.05968200016576454"/>
+        <joint name="Joint2" value="-0.9996139579653973"/>
+        <joint name="Joint3" value="0.028271953396127918"/>
+        <joint name="Joint4" value="-1.051553679252855"/>
+        <joint name="Joint_Vakuumgreifer" value="0.9384525241937204"/>
     </group_state>
     <group_state name="pre_place" group="moveit_shift">
         <joint name="Joint1" value="-0.092"/>
