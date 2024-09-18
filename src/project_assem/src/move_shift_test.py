@@ -63,15 +63,54 @@ def release_object_and_reposition_at_current_position(move_group, scene, name):
     box_pose.pose.position.y = y
     box_pose.pose.position.z = z - 0.3  # Setze die Position auf die aktuelle Höhe
 
+    if (name == "box_1"):
+        box_pose.pose.orientation.x = 0.0
+        box_pose.pose.orientation.y = 0.0
+        box_pose.pose.orientation.z = 0.0
+        box_pose.pose.orientation.w = 1.0  
+        box_pose.pose.position.x = 1.5
+        box_pose.pose.position.y = -0.4
+        box_pose.pose.position.z = 0.37
     if (name == "box_2"):
         box_pose.pose.orientation.x = 0.0
         box_pose.pose.orientation.y = 0.0
         box_pose.pose.orientation.z = 0.0
-        box_pose.pose.orientation.w = 1.0  # Orientierung: horizontal
-        box_pose.pose.position.x = x
-        box_pose.pose.position.y = y
-        box_pose.pose.position.z = z - 0.3  # Setze die Position auf die aktuelle Höhe
-
+        box_pose.pose.orientation.w = 1.0  
+        box_pose.pose.position.x = 1.3
+        box_pose.pose.position.y = -0.4
+        box_pose.pose.position.z = 0.37   
+    if (name == "box_3"):
+        box_pose.pose.orientation.x = 0.0
+        box_pose.pose.orientation.y = 0.0
+        box_pose.pose.orientation.z = 0.0
+        box_pose.pose.orientation.w = 1.0  
+        box_pose.pose.position.x = 1.1
+        box_pose.pose.position.y = -0.4
+        box_pose.pose.position.z = 0.37   
+    if (name == "box_4"):
+        box_pose.pose.orientation.x = 0.0
+        box_pose.pose.orientation.y = 0.0
+        box_pose.pose.orientation.z = 0.0
+        box_pose.pose.orientation.w = 1.0  
+        box_pose.pose.position.x = 1.5
+        box_pose.pose.position.y = -0.4
+        box_pose.pose.position.z = 0.57   
+    if (name == "box_5"):
+        box_pose.pose.orientation.x = 0.0
+        box_pose.pose.orientation.y = 0.0
+        box_pose.pose.orientation.z = 0.0
+        box_pose.pose.orientation.w = 1.0  
+        box_pose.pose.position.x = 1.3
+        box_pose.pose.position.y = -0.4
+        box_pose.pose.position.z = 0.57   
+    if (name == "box_6"):
+        box_pose.pose.orientation.x = 0.0
+        box_pose.pose.orientation.y = 0.0
+        box_pose.pose.orientation.z = 0.0
+        box_pose.pose.orientation.w = 1.0  
+        box_pose.pose.position.x = 1.5
+        box_pose.pose.position.y = -0.4
+        box_pose.pose.position.z = 0.77 
 
 
     # Füge die Box zurück zur Szene hinzu
