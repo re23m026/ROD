@@ -4,15 +4,8 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /Global Options1
-        - /Status1
         - /robAssemble1
         - /robshift1
-        - /Axes1
-        - /RobotModel1
-        - /RobotModel2
-        - /RobotModel3
-        - /RobotModel3/Status1
       Splitter Ratio: 0.5
     Tree Height: 539
   - Class: rviz/Selection

@@ -63,61 +63,14 @@ def release_object_and_reposition_at_current_position(move_group, scene, name):
     box_pose.pose.position.y = y
     box_pose.pose.position.z = z - 0.3  # Setze die Position auf die aktuelle Höhe
 
-    if (name == "box_1"):
-        box_pose.pose.orientation.x = 0.0
-        box_pose.pose.orientation.y = 0.0
-        box_pose.pose.orientation.z = 0.0
-        box_pose.pose.orientation.w = 1.0  
-        box_pose.pose.position.x = 1.5
-        box_pose.pose.position.y = -0.4
-        box_pose.pose.position.z = 0.37
-    if (name == "box_2"):
-        box_pose.pose.orientation.x = 0.0
-        box_pose.pose.orientation.y = 0.0
-        box_pose.pose.orientation.z = 0.0
-        box_pose.pose.orientation.w = 1.0  
-        box_pose.pose.position.x = 1.3
-        box_pose.pose.position.y = -0.4
-        box_pose.pose.position.z = 0.37   
-    if (name == "box_3"):
-        box_pose.pose.orientation.x = 0.0
-        box_pose.pose.orientation.y = 0.0
-        box_pose.pose.orientation.z = 0.0
-        box_pose.pose.orientation.w = 1.0  
-        box_pose.pose.position.x = 1.1
-        box_pose.pose.position.y = -0.4
-        box_pose.pose.position.z = 0.37   
-    if (name == "box_4"):
-        box_pose.pose.orientation.x = 0.0
-        box_pose.pose.orientation.y = 0.0
-        box_pose.pose.orientation.z = 0.0
-        box_pose.pose.orientation.w = 1.0  
-        box_pose.pose.position.x = 1.5
-        box_pose.pose.position.y = -0.4
-        box_pose.pose.position.z = 0.57   
-    if (name == "box_5"):
-        box_pose.pose.orientation.x = 0.0
-        box_pose.pose.orientation.y = 0.0
-        box_pose.pose.orientation.z = 0.0
-        box_pose.pose.orientation.w = 1.0  
-        box_pose.pose.position.x = 1.3
-        box_pose.pose.position.y = -0.4
-        box_pose.pose.position.z = 0.57   
-    if (name == "box_6"):
-        box_pose.pose.orientation.x = 0.0
-        box_pose.pose.orientation.y = 0.0
-        box_pose.pose.orientation.z = 0.0
-        box_pose.pose.orientation.w = 1.0  
-        box_pose.pose.position.x = 1.5
-        box_pose.pose.position.y = -0.4
-        box_pose.pose.position.z = 0.77 
-
-
     # Füge die Box zurück zur Szene hinzu
     scene.add_box(name, box_pose, size=(0.2, 0.2, 0.2))
     rospy.sleep(1)  # Warte einen Moment, um sicherzustellen, dass das Objekt hinzugefügt wurde
 
+
+
 def move_robot():
+    
     # Initialisierung
     moveit_commander.roscpp_initialize(sys.argv)
     rospy.init_node('move_robot_script', anonymous=True)
@@ -154,71 +107,178 @@ def move_robot():
     add_mesh_object(scene, 1.4, -3.0, -0.5, 1.57, 0.0, 1.57, "conveyor_8", mesh_file_path)  
 
 
-    # Boxen hinzufügen
-    initial_positions = [(-0.854457, 0.43213), (-0.854457, 0.43213 + 0.3), (-0.854457, 0.43213 + 0.6),
-                         (-0.854457 - 0.3, 0.43213), (-0.854457 - 0.3, 0.43213 + 0.3), (-0.854457 - 0.3, 0.43213 + 0.6)]
+    # Box hinzufügen
+    add_object(scene, -0.854457, 0.43213, 0.35, "box_1")
+    add_object(scene, -0.854457, 0.43213+0.3, 0.35, "box_2")
+    add_object(scene, -0.854457, 0.43213+0.6, 0.35, "box_3")
+    add_object(scene, -0.854457-0.3, 0.43213, 0.35, "box_4")
+    add_object(scene, -0.854457-0.3, 0.43213+0.3, 0.35, "box_5")
+    add_object(scene, -0.854457-0.3, 0.43213+0.6, 0.35, "box_6")
+
+
+    # Zielpose für "Pre-Pick" definieren
+    move_group.set_named_target("pre_pick")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
     
-    for i, (x, y) in enumerate(initial_positions):
-        add_object(scene, x, y, 0.35, f"box_{i + 1}")
+    # Bewegung zum Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    print("reached Pre-Pick Position")
+    rospy.sleep(2)
 
-    # Loop through all six boxes
-    for i in range(6):
-        box_name = f"box_{i + 1}"
-        pick = f"pick_{i + 1}"
-        place = f"place_{i + 1}"
-        
-        # Pick the box
-        move_group.set_named_target("pre_pick")
-        move_group.go(wait=True)
-        move_group.stop()
-        move_group.clear_pose_targets()
-        rospy.sleep(1)
-        
-        move_group.set_named_target(pick)
-        move_group.go(wait=True)
-        move_group.stop()
-        move_group.clear_pose_targets()
-        rospy.sleep(1)
- 
-        # Grasp the box
-        grasp_object(robot, move_group, scene, box_name)
-        
-        # Move to pre-place position
-        move_group.set_named_target("pre_pick")
-        move_group.go(wait=True)
-        move_group.stop()
-        move_group.clear_pose_targets()
-        rospy.sleep(1)
-        
-        move_group.set_named_target("pre_place")
-        move_group.go(wait=True)
-        move_group.stop()
-        move_group.clear_pose_targets()
-        rospy.sleep(1)
+    # Zielpose für "Pick" definieren
+    move_group.set_named_target("pick_1")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    print("Reached Pick Position")
+    rospy.sleep(2)
 
-        move_group.set_named_target(place)
-        move_group.go(wait=True)
-        move_group.stop()
-        move_group.clear_pose_targets()
-        rospy.sleep(1)
-        
-        # Place the box
-        release_object(move_group, scene, box_name)
-        
-        # Correct the orientation of the box
-        release_object_and_reposition_at_current_position(move_group, scene, box_name)
-        
-        # Return to pre-pick position
-        move_group.set_named_target("pre_place")
-        move_group.go(wait=True)
-        move_group.stop()
-        move_group.clear_pose_targets()
-        rospy.sleep(1)
-      
-        
+    # Objekt greifen (Attach)
+    grasp_object(robot, move_group, scene, "box_1")
+    print("grasped object")
+
+    move_group.set_named_target("pre_pick")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pre-Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    rospy.sleep(2)
+
+    move_group.set_named_target("pre_place")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pre-Place-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    rospy.sleep(2)
+
+    move_group.set_named_target("place")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Place-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    rospy.sleep(2)
+
+    # Objekt ablegen (Detach)
+    release_object(move_group, scene, "box_1")
+    print("Object released")
+
+    # Orientierung korriegieren.
+    release_object_and_reposition_at_current_position(move_group, scene, "box_1")
+
+    move_group.set_named_target("pre_place")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # ---------------------
+
+    # Zielpose für "Pre-Pick" definieren
+    move_group.set_named_target("pre_pick")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    print("reached Pre-Pick Position")
+    rospy.sleep(2)
+
+    # Zielpose für "Pick" definieren
+    move_group.set_named_target("pick_2")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    print("Reached Pick Position")
+    rospy.sleep(2)
+
+    # Objekt greifen (Attach)
+    grasp_object(robot, move_group, scene, "box_2")
+    print("grasped object")
+
+    move_group.set_named_target("pre_place")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pre-Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    rospy.sleep(2)
+
+    # Objekt ablegen (Detach)
+    release_object(move_group, scene, "box_2")
+    print("Object released")
+
+    # Orientierung korriegieren.
+    release_object_and_reposition_at_current_position(move_group, scene, "box_2")
+
+    move_group.set_named_target("pre_place")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+
+# ---------------------
+
+    # Zielpose für "Pre-Pick" definieren
+    move_group.set_named_target("pre_pick")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    print("reached Pre-Pick Position")
+    rospy.sleep(2)
+
+    # Zielpose für "Pick" definieren
+    move_group.set_named_target("pick_3")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    print("Reached Pick Position")
+    rospy.sleep(2)
+
+    # Objekt greifen (Attach)
+    grasp_object(robot, move_group, scene, "box_3")
+    print("grasped object")
+
+    move_group.set_named_target("pre_place")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+    
+    # Bewegung zum Pre-Pick-Punkt planen und ausführen
+    move_group.go(wait=True)
+    move_group.stop()
+    move_group.clear_pose_targets()
+    rospy.sleep(2)
+
+    # Objekt ablegen (Detach)
+    release_object(move_group, scene, "box_3")
+    print("Object released")
+
+    # Orientierung korriegieren.
+    release_object_and_reposition_at_current_position(move_group, scene, "box_3")
+
+    move_group.set_named_target("pre_place")
+    move_group.set_planning_time(10)  # Setze die Planungszeit auf 10 Sekunden
+
+
+
+
+
     # Herunterfahren
     moveit_commander.roscpp_shutdown()
-
 
 def grasp_object(robot, move_group, scene, name):
     # Fügen Sie hier den Code hinzu, um das Objekt an das Werkzeug zu "attachen"

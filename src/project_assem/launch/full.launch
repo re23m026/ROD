@@ -1,7 +1,9 @@
 <launch>
 
-  <include file="$(find project_assem)/launch/gazebo_full.launch" />
-  
+  <include file="$(find moveit_assem)/launch/move_group.launch" />
+
+  <include file="$(find moveit_shift)/launch/move_group.launch" />
+
   <include file="$(find project_assem)/launch/rviz_full.launch" />
   
 </launch>

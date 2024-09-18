@@ -5,12 +5,8 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-subdirs("move_assemble")
-subdirs("move_shift")
 subdirs("moveit_assem")
-subdirs("moveit_model")
 subdirs("moveit_shift")
-subdirs("moveit_test")
 subdirs("environment")
 subdirs("project_assem")
 subdirs("project_model")

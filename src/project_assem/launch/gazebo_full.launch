@@ -5,8 +5,6 @@
   
   <include file="$(find project_assem)/launch/robAssemble_gazebo.launch" />
   <include file="$(find project_model)/launch/robshift_gazebo.launch" />
-  <include file="$(find environment)/launch/conveyor_gazebo.launch"/>
-  <include file="$(find environment)/launch/europalette_gazebo.launch"/>
   <!--include file="$(find environment)/launch/brick_gazebo.launch"/-->
 
   </launch>

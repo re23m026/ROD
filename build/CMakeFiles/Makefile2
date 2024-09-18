@@ -54,12 +54,8 @@ CMAKE_BINARY_DIR = /home/steve/Desktop/ROD/build
 
 # The main recursive "all" target.
 all: gtest/all
-all: move_assemble/all
-all: move_shift/all
 all: moveit_assem/all
-all: moveit_model/all
 all: moveit_shift/all
-all: moveit_test/all
 all: environment/all
 all: project_assem/all
 all: project_model/all
@@ -68,12 +64,8 @@ all: project_model/all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
-preinstall: move_assemble/preinstall
-preinstall: move_shift/preinstall
 preinstall: moveit_assem/preinstall
-preinstall: moveit_model/preinstall
 preinstall: moveit_shift/preinstall
-preinstall: moveit_test/preinstall
 preinstall: environment/preinstall
 preinstall: project_assem/preinstall
 preinstall: project_model/preinstall
@@ -87,12 +79,8 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
-clean: move_assemble/clean
-clean: move_shift/clean
 clean: moveit_assem/clean
-clean: moveit_model/clean
 clean: moveit_shift/clean
-clean: moveit_test/clean
 clean: environment/clean
 clean: project_assem/clean
 clean: project_model/clean
@@ -175,42 +163,6 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/clean
 
 #=============================================================================
-# Directory level rules for directory move_assemble
-
-# Recursive "all" directory target.
-move_assemble/all:
-
-.PHONY : move_assemble/all
-
-# Recursive "preinstall" directory target.
-move_assemble/preinstall:
-
-.PHONY : move_assemble/preinstall
-
-# Recursive "clean" directory target.
-move_assemble/clean: move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-.PHONY : move_assemble/clean
-
-#=============================================================================
-# Directory level rules for directory move_shift
-
-# Recursive "all" directory target.
-move_shift/all:
-
-.PHONY : move_shift/all
-
-# Recursive "preinstall" directory target.
-move_shift/preinstall:
-
-.PHONY : move_shift/preinstall
-
-# Recursive "clean" directory target.
-move_shift/clean:
-
-.PHONY : move_shift/clean
-
-#=============================================================================
 # Directory level rules for directory moveit_assem
 
 # Recursive "all" directory target.
@@ -224,27 +176,9 @@ moveit_assem/preinstall:
 .PHONY : moveit_assem/preinstall
 
 # Recursive "clean" directory target.
-moveit_assem/clean:
+moveit_assem/clean: moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 .PHONY : moveit_assem/clean
-
-#=============================================================================
-# Directory level rules for directory moveit_model
-
-# Recursive "all" directory target.
-moveit_model/all:
-
-.PHONY : moveit_model/all
-
-# Recursive "preinstall" directory target.
-moveit_model/preinstall:
-
-.PHONY : moveit_model/preinstall
-
-# Recursive "clean" directory target.
-moveit_model/clean:
-
-.PHONY : moveit_model/clean
 
 #=============================================================================
 # Directory level rules for directory moveit_shift
@@ -263,24 +197,6 @@ moveit_shift/preinstall:
 moveit_shift/clean:
 
 .PHONY : moveit_shift/clean
-
-#=============================================================================
-# Directory level rules for directory moveit_test
-
-# Recursive "all" directory target.
-moveit_test/all:
-
-.PHONY : moveit_test/all
-
-# Recursive "preinstall" directory target.
-moveit_test/preinstall:
-
-.PHONY : moveit_test/preinstall
-
-# Recursive "clean" directory target.
-moveit_test/clean:
-
-.PHONY : moveit_test/clean
 
 #=============================================================================
 # Directory level rules for directory project_assem
@@ -563,31 +479,31 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target move_assemble/CMakeFiles/_catkin_empty_exported_target.dir
+# Target rules for target moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir
 
 # All Build rule for target.
-move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/build.make move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/build.make move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/build
+moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/build.make moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/build.make moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/steve/Desktop/ROD/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/all
+.PHONY : moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/all
 
 # Build rule for subdir invocation for target.
-move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/steve/Desktop/ROD/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/steve/Desktop/ROD/build/CMakeFiles 0
-.PHONY : move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-_catkin_empty_exported_target: move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/rule
+_catkin_empty_exported_target: moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 .PHONY : _catkin_empty_exported_target
 
 # clean rule for target.
-move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/build.make move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : move_assemble/CMakeFiles/_catkin_empty_exported_target.dir/clean
+moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/build.make moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : moveit_assem/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,0 +1,37 @@
+<launch>
+
+    <include file="$(find moveit_assem)/launch/ros_controllers.launch" />
+    <include file="$(find moveit_shift)/launch/ros_controllers.launch" />
+
+    <node name="controller_manager" pkg="controller_manager" type="controller_manager" output="screen" />
+    <node name="controller_spawner_assem1" pkg="controller_manager" type="spawner" args="controller_assem" />
+    <node name="controller_spawner_shift1" pkg="controller_manager" type="spawner" args="controller_shift" />
+
+
+    <!-- Load Robot 1 (rob_assemble) -->
+    <group ns="rob_assemble">
+        <!-- Load the URDF into the parameter server -->
+        <param name="robot_description" textfile="$(find project_assem)/urdf/RobAssemble.urdf" />
+        
+        <!-- Start the robot_state_publisher to publish the robot state -->
+        <node name="robot_state_publisher_assem" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+        
+        <!-- Start Move Group for rob_assemble -->
+        <include file="$(find moveit_assem)/launch/move_group.launch" />
+    </group>
+
+    <!-- Load Robot 2 (project_model) -->
+    <group ns="project_model">
+        <!-- Load the URDF into the parameter server -->
+        <param name="robot_description" textfile="$(find project_model)/urdf/RobShift.urdf" />
+        
+        <!-- Start the robot_state_publisher to publish the robot state -->
+        <node name="robot_state_publisher_shift" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+        
+        <!-- Start Move Group for project_model -->
+        <include file="$(find moveit_shift)/launch/move_group.launch" />
+    </group>
+
+    <!-- Start RViz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find project_assem)/urdf/combined.rviz" />
+</launch>

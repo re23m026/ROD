@@ -1,0 +1,15 @@
+<launch>
+  <param name="/robAssemble/robot_description" command="cat $(find project_assem)/urdf/RobAssemble.urdf" />
+  
+    <!-- Load Robot Assem -->
+  <group ns="project_assem">
+      <!-- Load the URDF into the parameter server -->
+      <param name="robot_description" textfile="$(find project_assem)/urdf/RobAssemble.urdf" />
+      
+      <!-- Start the robot_state_publisher to publish the robot state -->
+      <node name="robot_state_publisher_assem" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+      
+      <!-- Start Move Group for project_model -->
+      <include file="$(find moveit_assem)/launch/move_group.launch" />
+  </group>
+</launch>

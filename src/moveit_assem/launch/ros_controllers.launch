@@ -5,7 +5,7 @@
   <rosparam file="$(find moveit_assem)/config/ros_controllers.yaml" command="load"/>
 
   <!-- Load the controllers -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+  <node name="controller_spawner_assem" pkg="controller_manager" type="spawner" respawn="false"
     output="screen" args="controller_assem "/>
 
 </launch>
